@@ -191,6 +191,15 @@ streamlit run app.py
 El Data Lake viene incluido en el repositorio, de modo que **el aplicativo funciona sin
 descargar nada más**.
 
+### Despliegue en línea
+
+Para publicar el aplicativo en Streamlit Community Cloud y el tablero en Tableau
+Public, siga la [guía de despliegue](DESPLIEGUE.md), que incluye un enlace directo
+con el formulario de despliegue ya rellenado.
+
+Las dependencias se verificaron instalando `requirements.txt` en un entorno limpio y
+ejecutando las siete páginas del aplicativo sin errores.
+
 ### 4. (Opcional) Reconstruir la base desde cero
 
 Solo si desea reproducir el proceso completo. Requiere descargar
