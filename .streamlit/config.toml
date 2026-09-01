@@ -1,0 +1,16 @@
+# Tema visual del aplicativo — paleta "Ember".
+# Los colores replican los definidos en src/stats_logic.py para que la interfaz
+# y los graficos formen un unico sistema visual.
+[theme]
+base = "dark"
+primaryColor = "#F25C05"            # Naranja ember: acento principal
+backgroundColor = "#0D0D0D"         # Negro carbon: fondo
+secondaryBackgroundColor = "#161616" # Gris muy oscuro: tarjetas y barra lateral
+textColor = "#F2F2F2"               # Blanco humo
+font = "sans serif"
+
+[server]
+maxUploadSize = 5
+
+[browser]
+gatherUsageStats = false
