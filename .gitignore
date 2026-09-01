@@ -1,0 +1,30 @@
+# --- Bases de datos --------------------------------------------------------
+# La base cruda de Kaggle (795 MB) y la base normalizada intermedia no se
+# versionan: se reconstruyen ejecutando los scripts de "Base de datos/".
+FPA_FOD_20170508.sqlite
+*.db
+*.db-wal
+*.db-shm
+*.sqlite
+
+# El Data Lake Parquet SI se versiona (42,8 MB en total), para que el
+# aplicativo sea autocontenido. Por eso "data/" no aparece en esta lista.
+
+# --- Python ----------------------------------------------------------------
+__pycache__/
+*.py[cod]
+.Python
+env/
+venv/
+.venv/
+*.egg-info/
+
+# --- Entornos y editores ---------------------------------------------------
+.DS_Store
+.idea/
+.vscode/
+*.swp
+
+# --- Salidas temporales ----------------------------------------------------
+*.log
+.ipynb_checkpoints/
