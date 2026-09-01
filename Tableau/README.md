@@ -30,6 +30,30 @@ python construir_libro.py      # genera Origen_del_Fuego_EEUU_1992_2015.twb
 
 ---
 
+## Capturas del tablero
+
+Imágenes tomadas del libro abierto en Tableau Desktop, como verificación de que cada página renderiza lo que la especificación describe.
+
+### 1. Panorama del origen del fuego
+
+![1. Panorama del origen del fuego](capturas/1-panorama-del-origen.png)
+
+La paradoja frecuencia-magnitud: el origen antrópico produce el 59,11 % de los eventos y el 21,37 % de la superficie; el natural, el 14,81 % y el 62,11 %.
+
+### 2. Magnitud, causas y propiedad
+
+![2. Magnitud, causas y propiedad](capturas/2-magnitud-causas-y-propiedad.png)
+
+Las dos pirámides están invertidas: las clases A y B reúnen la mayoría de los eventos y una fracción marginal de la superficie; la clase G invierte esa relación.
+
+### 3. Geografía y evolución temporal
+
+![3. Geografía y evolución temporal](capturas/3-geografia-y-evolucion.png)
+
+Los 40.000 focos de la muestra dibujan el país, coloreados por origen. Los estados con más incendios no son los que más superficie pierden.
+
+---
+
 ## 1. Fuentes de datos del tablero
 
 Los tres archivos de `extractos/` se generan con `generar_extractos.py`, que consulta el
