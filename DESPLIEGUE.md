@@ -68,37 +68,36 @@ Lo que ya está listo y validado en este repositorio:
 | Especificación del tablero hoja por hoja | ✅ `Tableau/README.md` |
 | Campos calculados con su fórmula exacta | ✅ `Tableau/calculos/campos-calculados.md` |
 | Registro de transformaciones | ✅ `Tableau/preparacion/transformacion-datos.md` |
-| Libro `.twb` armado | ⬜ Debe construirse en Tableau Desktop |
+| Libro `.twb` armado | ✅ `Tableau/Origen_del_Fuego_EEUU_1992_2015.twb` |
 
-### Construcción del libro
+### El libro ya está construido
 
-La guía completa está en [`Tableau/README.md`](Tableau/README.md). En resumen:
+El archivo `Tableau/Origen_del_Fuego_EEUU_1992_2015.twb` se genera por código y quedó
+verificado: se abre en Tableau Desktop y sus tres páginas renderizan sin errores.
 
-1. Abrir **Tableau Public Desktop** (gratuito) o Tableau Desktop.
-2. Conectar los tres archivos de `Tableau/extractos/` como fuentes de texto
-   independientes. **No unirlas entre sí.**
-3. Convertir en dimensión los campos numéricos que son códigos: `Anio`, `Mes` y `Orden de clase`.
-   Sin este paso, Tableau sumaría los años en lugar de agruparlos.
-4. Asignar los roles geográficos a `Estado` y, en el extracto de muestra, a `Latitud` y
-   `Longitud`.
-5. Crear los ocho campos calculados de
-   [`Tableau/calculos/campos-calculados.md`](Tableau/calculos/campos-calculados.md).
-   Todos son cocientes de sumas; ninguno usa `AVG()`, por la razón que ese documento
-   explica con un ejemplo numérico.
-6. Construir las doce hojas y los tres tableros según las tablas de
-   [`Tableau/README.md`](Tableau/README.md).
-7. Guardar como `Origen_del_Fuego_EEUU_1992_2015.twb` en la carpeta `Tableau/`.
+Para regenerarlo (por ejemplo, tras cambiar los datos):
 
-Cada hoja de la especificación incluye **las cifras exactas que debe reproducir**, de
-modo que el resultado es verificable contra el aplicativo de Streamlit.
+```bash
+cd Tableau
+python generar_extractos.py
+python construir_libro.py
+```
+
+Páginas del tablero:
+
+- **1. Panorama del origen**
+- **2. Magnitud, causas y propiedad**
+- **3. Geografia y evolucion**
 
 ### Publicación
 
-1. En Tableau: **Servidor → Tableau Public → Guardar en Tableau Public**.
-2. Iniciar sesión con la cuenta de Tableau Public (gratuita, se crea en
+1. Abrir `Tableau/Origen_del_Fuego_EEUU_1992_2015.twb` con **Tableau Public Desktop**
+   (gratuito) o Tableau Desktop.
+2. **Servidor → Tableau Public → Guardar en Tableau Public**.
+3. Iniciar sesión con la cuenta de Tableau Public (gratuita, se crea en
    <https://public.tableau.com>).
-3. Al guardar, Tableau devuelve la URL pública del tablero.
-4. Añadir esa URL al `README.md` principal y a `Tableau/README.md`.
+4. Al guardar, Tableau devuelve la URL pública del tablero.
+5. Añadir esa URL al `README.md` principal y a `Tableau/README.md`.
 
 > **Nota sobre los datos.** Tableau Public empaqueta los extractos dentro del libro
 > publicado, de modo que el tablero funciona en línea sin necesidad de alojar los CSV
@@ -112,4 +111,4 @@ modo que el resultado es verificable contra el aplicativo de Streamlit.
 | Producto | Requisito | Acción |
 |---|---|---|
 | Aplicativo Streamlit | Cuenta de GitHub | Abrir el enlace directo de la sección 1 y pulsar *Deploy* |
-| Tablero Tableau | Cuenta de Tableau Public | Construir el libro según la especificación y publicarlo |
+| Tablero Tableau | Cuenta de Tableau Público | Abrir `Tableau/Origen_del_Fuego_EEUU_1992_2015.twb` y usar *Servidor → Tableau Public → Guardar* |

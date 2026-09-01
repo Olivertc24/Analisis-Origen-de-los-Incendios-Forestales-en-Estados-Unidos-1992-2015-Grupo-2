@@ -15,10 +15,18 @@ de las métricas macro** sobre los 1.880.465 incendios del período.
 | Documentación del modelo en Tableau | ✅ Este archivo |
 | Campos calculados con su fórmula exacta | ✅ [`calculos/campos-calculados.md`](calculos/campos-calculados.md) |
 | Registro de transformaciones | ✅ [`preparacion/transformacion-datos.md`](preparacion/transformacion-datos.md) |
-| Libro `.twb` armado | ⬜ Pendiente de construir en Tableau Desktop |
+| Libro `.twb` armado | ✅ `Origen_del_Fuego_EEUU_1992_2015.twb`, generado por código y verificado abriéndolo en Tableau Desktop |
 
-Los extractos y la especificación de abajo están completos: construir el libro consiste
-en conectar los CSV y montar las hojas descritas, siguiendo la guía de la sección 5.
+**El libro está construido y verificado.** Se genera por código con
+[`construir_libro.py`](construir_libro.py) y se comprobó abriéndolo en Tableau Desktop:
+las tres páginas cargan y renderizan sin errores. La especificación de abajo documenta
+lo que el libro contiene, y sirve además para reconstruirlo a mano si hiciera falta.
+
+```bash
+cd Tableau
+python generar_extractos.py    # extractos desde el Data Lake, con control de consistencia
+python construir_libro.py      # genera Origen_del_Fuego_EEUU_1992_2015.twb
+```
 
 ---
 
