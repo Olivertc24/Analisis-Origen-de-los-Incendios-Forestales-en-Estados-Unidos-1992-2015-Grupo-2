@@ -48,52 +48,69 @@ los registros de construcción, reiniciarla o eliminarla.
 **https://public.tableau.com/app/profile/oliver.triveno/viz/Origen_del_Fuego_EEUU_1992_2015/1_Panoramadelorigen**
 
 
-### Estado actual
-
-Lo que ya está listo y validado en este repositorio:
+### Estado de los componentes en este repositorio
 
 | Componente | Estado |
 |---|---|
 | Extractos de datos (`Tableau/extractos/`) | ✅ Generados, con control automático de consistencia contra el Data Lake |
-| Script generador reproducible | ✅ `Tableau/generar_extractos.py` |
+| Scripts generadores reproducibles | ✅ Los cuatro de `Tableau/` |
 | Especificación del tablero hoja por hoja | ✅ `Tableau/README.md` |
 | Campos calculados con su fórmula exacta | ✅ `Tableau/calculos/campos-calculados.md` |
 | Registro de transformaciones | ✅ `Tableau/preparacion/transformacion-datos.md` |
-| Libro `.twb` armado | ✅ `Tableau/Origen_del_Fuego_EEUU_1992_2015.twb` |
+| Extracción `.hyper` | ✅ Se reconstruye con `construir_hyper.py` y viaja dentro del `.twbx` |
+| Libro `.twb` | ✅ `Tableau/Origen_del_Fuego_EEUU_1992_2015.twb` |
+| Paquete `.twbx` publicable | ✅ `Tableau/Origen_del_Fuego_EEUU_1992_2015.twbx` |
+| Captura de la página 1 | ✅ `Tableau/capturas/1-panorama-del-origen.png` |
+| Captura de la página 2 | ✅ `Tableau/capturas/2-magnitud-causas-y-propiedad.png` |
+| Captura de la página 3 | ✅ `Tableau/capturas/3-geografia-y-evolucion.png` |
 
-### El libro ya está construido
+### Por qué hace falta el `.twbx` y no basta el `.twb`
 
-El archivo `Tableau/Origen_del_Fuego_EEUU_1992_2015.twb` se genera por código y quedó
-verificado: se abre en Tableau Desktop y sus tres páginas renderizan sin errores.
+Tableau Public **sólo publica libros cuyas fuentes de datos sean extracciones**. Un libro
+conectado en vivo a archivos CSV se abre sin problema en Tableau Desktop, pero al
+intentar guardarlo en Tableau Public devuelve:
 
-Para regenerarlo (por ejemplo, tras cambiar los datos):
+> Los libros de trabajo guardados en Tableau Public deben usar extracciones. La fuente de
+> datos `<nombre>` no es una extracción.
+
+Por eso la cadena incluye dos pasos que no serían necesarios para un uso local:
+`construir_hyper.py`, que convierte los CSV en una extracción `.hyper`, y
+`empaquetar.py`, que envuelve libro y extracción en un `.twbx` portable.
+
+### Regenerar el tablero
+
+El libro se genera por código: `construir_libro.py` escribe el `.twb` entero a partir de
+los extractos. Para rehacerlo tras un cambio en los datos:
 
 ```bash
 cd Tableau
-python generar_extractos.py
-python construir_libro.py
+python generar_extractos.py    # CSV agregados desde el Data Lake
+python construir_hyper.py      # CSV -> extracción .hyper
+python construir_libro.py      # libro .twb sobre la extracción
+python empaquetar.py           # .twbx portable, listo para publicar
 ```
+
+El orden importa: cada script consume la salida del anterior.
 
 Páginas del tablero:
 
 - **1. Panorama del origen**
 - **2. Magnitud, causas y propiedad**
-- **3. Geografia y evolucion**
+- **3. Geografía y evolución**
 
-### Publicación
+### Cómo se publicó
 
-1. Abrir `Tableau/Origen_del_Fuego_EEUU_1992_2015.twb` con **Tableau Public Desktop**
-   (gratuito) o Tableau Desktop.
-2. **Servidor → Tableau Public → Guardar en Tableau Public**.
+1. Abrir `Tableau/Origen_del_Fuego_EEUU_1992_2015.twbx` con **Tableau Public Desktop** (gratuito).
+2. **Archivo → Guardar en Tableau Public como...**
 3. Iniciar sesión con la cuenta de Tableau Public (gratuita, se crea en
    <https://public.tableau.com>).
-4. Al guardar, Tableau devuelve la URL pública del tablero.
-5. Añadir esa URL al `README.md` principal y a `Tableau/README.md`.
+4. Al guardar, Tableau devuelve la URL pública del tablero, que es la que encabeza esta
+   sección y el `README.md` principal.
 
-> **Nota sobre los datos.** Tableau Public empaqueta los extractos dentro del libro
-> publicado, de modo que el tablero funciona en línea sin necesidad de alojar los CSV
-> en ningún otro sitio. El extracto principal de este proyecto (hechos_incendios.csv) está muy
-> por debajo de los límites del servicio.
+> **Nota sobre los datos.** Tableau Public empaqueta la extracción dentro del libro
+> publicado, de modo que el tablero funciona en línea sin necesidad de alojar los CSV en
+> ningún otro sitio. La extracción de este proyecto está muy por debajo de los límites
+> del servicio.
 
 ---
 

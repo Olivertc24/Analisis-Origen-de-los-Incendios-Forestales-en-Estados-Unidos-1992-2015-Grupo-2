@@ -227,21 +227,46 @@ base cruda, use la variable de entorno `FPA_FOD_PATH`.
 
 ---
 
----
+## Tablero de Tableau ✅ publicado
 
-## Estado del tablero de Tableau
+**[Ver el tablero en Tableau Public](https://public.tableau.com/app/profile/oliver.triveno/viz/Origen_del_Fuego_EEUU_1992_2015/1_Panoramadelorigen)**
 
-Los **extractos de datos están generados y validados** contra el Data Lake (el script
-`Tableau/generar_extractos.py` verifica que los totales coincidan exactamente con los del
-aplicativo), y la especificación del tablero está documentada hoja por hoja en
-[`Tableau/README.md`](Tableau/README.md), con los campos calculados en
+El libro **se genera por código**: `Tableau/construir_libro.py` escribe el `.twb` entero
+—fuentes de datos, campos calculados, hojas y tableros— a partir de los extractos. Si
+cambian los datos, cuatro órdenes reconstruyen el tablero completo sin ningún paso manual:
+
+```bash
+cd Tableau
+python generar_extractos.py    # CSV agregados desde el Data Lake
+python construir_hyper.py      # CSV -> extracción .hyper
+python construir_libro.py      # libro .twb sobre la extracción
+python empaquetar.py           # .twbx portable, listo para publicar
+```
+
+Los dos pasos intermedios no serían necesarios para un uso local, pero sí para publicar:
+Tableau Public **sólo acepta libros cuyas fuentes de datos sean extracciones**, de modo
+que los CSV se convierten en un `.hyper` y éste viaja dentro del `.twbx`.
+
+Páginas del tablero:
+
+- **1. Panorama del origen**
+- **2. Magnitud, causas y propiedad**
+- **3. Geografía y evolución**
+
+**Verificación.** Los extractos se validan automáticamente contra el Data Lake al final
+de `generar_extractos.py`, que comprueba que los totales coincidan exactamente con los
+del aplicativo. El libro se comprobó abriendo el `.twbx` en Tableau Desktop y capturando
+cada página:
+
+- [`Tableau/capturas/1-panorama-del-origen.png`](Tableau/capturas/1-panorama-del-origen.png)
+- [`Tableau/capturas/2-magnitud-causas-y-propiedad.png`](Tableau/capturas/2-magnitud-causas-y-propiedad.png)
+- [`Tableau/capturas/3-geografia-y-evolucion.png`](Tableau/capturas/3-geografia-y-evolucion.png)
+
+La documentación completa está en [`Tableau/README.md`](Tableau/README.md), con los
+campos calculados en
 [`Tableau/calculos/campos-calculados.md`](Tableau/calculos/campos-calculados.md) y el
 registro de transformaciones en
 [`Tableau/preparacion/transformacion-datos.md`](Tableau/preparacion/transformacion-datos.md).
-
-Falta armar el libro `.twb` en Tableau Desktop siguiendo la guía de construcción de la
-sección correspondiente. Todas las cifras que cada hoja debe reproducir están tabuladas
-en esa documentación, de modo que el resultado es verificable.
 
 ---
 
