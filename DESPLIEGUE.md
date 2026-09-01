@@ -6,52 +6,40 @@ estos pasos debe ejecutarlos el titular de la cuenta.
 
 ---
 
-## 1. Aplicativo web en Streamlit Community Cloud
+## 1. Aplicativo web en Streamlit Community Cloud ✅ publicado
 
-### Enlace directo con el formulario ya rellenado
+**https://incendios-eeuu-grupo2.streamlit.app**
 
-<https://share.streamlit.io/deploy?repository=Olivertc24%2FAnalisis-Origen-de-los-Incendios-Forestales-en-Estados-Unidos-1992-2015-Grupo-2&branch=main&mainModule=app.py>
+El aplicativo está desplegado y funcionando. Se reconstruye solo con cada `push` a la
+rama `main`.
 
-Ese enlace abre el formulario de despliegue con el repositorio, la rama y el archivo
-principal ya seleccionados. Solo hay que iniciar sesión con GitHub y pulsar **Deploy**.
+### Configuración con la que se desplegó
 
-### Pasos manuales equivalentes
+| Campo | Valor |
+|---|---|
+| Repository | `Olivertc24/Analisis-Origen-de-los-Incendios-Forestales-en-Estados-Unidos-1992-2015-Grupo-2` |
+| Branch | `main` |
+| Main file path | `app.py` |
+| App URL | `incendios-eeuu-grupo2` |
 
-1. Entrar en <https://share.streamlit.io> e iniciar sesión con la cuenta de GitHub
-   propietaria del repositorio.
-2. Pulsar **Create app** → **Deploy a public app from GitHub**.
-3. Rellenar el formulario:
+### Por qué el despliegue funcionó a la primera
 
-   | Campo | Valor |
-   |---|---|
-   | Repository | `Olivertc24/Analisis-Origen-de-los-Incendios-Forestales-en-Estados-Unidos-1992-2015-Grupo-2` |
-   | Branch | `main` |
-   | Main file path | `app.py` |
-   | App URL | el subdominio que se prefiera |
-
-4. Pulsar **Deploy**. La primera construcción tarda unos minutos: la nube clona el
-   repositorio e instala las dependencias de `requirements.txt`.
-
-### Por qué el despliegue no debería fallar
-
-El proyecto se preparó específicamente para este entorno:
-
-- **No hay que subir datos aparte.** El Data Lake en Parquet está versionado en el
-  repositorio (`data/`), de modo que el aplicativo es autocontenido. No depende de
+- **No hubo que subir datos aparte.** El Data Lake en Parquet está versionado en el
+  repositorio (`data/`), de modo que el aplicativo es autocontenido: no depende de
   ningún servicio externo de almacenamiento ni de la base de 795 MB de Kaggle.
-- **Las dependencias están verificadas.** Se instaló `requirements.txt` en un entorno
-  limpio y se ejecutaron las siete páginas del aplicativo sin ningún error, con las
-  versiones que la nube instalará: Streamlit 1.62, pandas 3.0.5, DuckDB 1.5.5,
-  PyArrow 25.0.1, Plotly 7.0.0 y NumPy 2.5.2.
+- **Las dependencias estaban verificadas.** Antes de desplegar se instaló
+  `requirements.txt` en un entorno limpio y se ejecutaron las siete páginas sin ningún
+  error, con las versiones que instala la nube: Streamlit 1.62, pandas 3.0.5,
+  DuckDB 1.5.5, PyArrow 25.0.1, Plotly 7.0.0 y NumPy 2.5.2.
 - **El repositorio es público**, requisito del plan gratuito de Community Cloud.
-- **El consumo de memoria es bajo.** DuckDB consulta los archivos Parquet directamente
-  desde disco en lugar de cargarlos en memoria, así que el aplicativo se mantiene
-  holgadamente dentro del límite de recursos del plan gratuito pese a describir
-  1.880.465 registros.
+- **El consumo de memoria es bajo.** DuckDB consulta los Parquet directamente desde
+  disco en lugar de cargarlos en memoria, así que el aplicativo se mantiene dentro del
+  límite de recursos del plan gratuito pese a describir 1.880.465 registros.
 
-### Después de desplegar
+### Volver a desplegar o administrar la aplicación
 
-Añadir la URL resultante al `README.md` principal, en la sección de puesta en marcha.
+Desde <https://share.streamlit.io> → *My apps*, el menú de la aplicación permite ver
+los registros de construcción, reiniciarla o eliminarla.
 
 ---
 
@@ -110,5 +98,5 @@ Páginas del tablero:
 
 | Producto | Requisito | Acción |
 |---|---|---|
-| Aplicativo Streamlit | Cuenta de GitHub | Abrir el enlace directo de la sección 1 y pulsar *Deploy* |
+| Aplicativo Streamlit | — | ✅ Publicado en https://incendios-eeuu-grupo2.streamlit.app |
 | Tablero Tableau | Cuenta de Tableau Público | Abrir `Tableau/Origen_del_Fuego_EEUU_1992_2015.twb` y usar *Servidor → Tableau Public → Guardar* |

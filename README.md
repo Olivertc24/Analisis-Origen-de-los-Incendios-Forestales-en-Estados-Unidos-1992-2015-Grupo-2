@@ -1,5 +1,7 @@
 ![Origen del fuego en Estados Unidos](assets/banner_incendios.png)
 
+### ▶ Aplicativo en vivo: **[incendios-eeuu-grupo2.streamlit.app](https://incendios-eeuu-grupo2.streamlit.app)**
+
 # Origen del fuego en Estados Unidos: perfil comparativo entre incendios antrópicos y naturales (1992–2015)
 
 Investigación estadística descriptiva sobre **1.880.465 incendios forestales
@@ -191,11 +193,16 @@ streamlit run app.py
 El Data Lake viene incluido en el repositorio, de modo que **el aplicativo funciona sin
 descargar nada más**.
 
-### Despliegue en línea
+### Aplicativo publicado
 
-Para publicar el aplicativo en Streamlit Community Cloud y el tablero en Tableau
-Public, siga la [guía de despliegue](DESPLIEGUE.md), que incluye un enlace directo
-con el formulario de despliegue ya rellenado.
+El aplicativo está desplegado en Streamlit Community Cloud y accesible sin instalar
+nada:
+
+**https://incendios-eeuu-grupo2.streamlit.app**
+
+Se actualiza solo: cada `push` a la rama `main` vuelve a construir la aplicación. Los
+detalles del despliegue y los pasos para publicar el tablero de Tableau están en la
+[guía de despliegue](DESPLIEGUE.md).
 
 Las dependencias se verificaron instalando `requirements.txt` en un entorno limpio y
 ejecutando las siete páginas del aplicativo sin errores.
