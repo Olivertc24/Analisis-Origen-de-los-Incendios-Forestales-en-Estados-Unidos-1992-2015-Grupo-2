@@ -1,6 +1,7 @@
 ![Origen del fuego en Estados Unidos](assets/banner_incendios.png)
 
 ### ▶ Aplicativo en vivo: **[incendios-eeuu-grupo2.streamlit.app](https://incendios-eeuu-grupo2.streamlit.app)**
+### 📊 Tablero en vivo: **[Tableau Public](https://public.tableau.com/app/profile/oliver.triveno/viz/Origen_del_Fuego_EEUU_1992_2015/1_Panoramadelorigen)**
 
 # Origen del fuego en Estados Unidos: perfil comparativo entre incendios antrópicos y naturales (1992–2015)
 

@@ -1,5 +1,7 @@
 # Tablero de Tableau — Origen del fuego en Estados Unidos (1992–2015)
 
+### 📊 Ver el tablero en línea: **[Tableau Public](https://public.tableau.com/app/profile/oliver.triveno/viz/Origen_del_Fuego_EEUU_1992_2015/1_Panoramadelorigen)**
+
 Tablero ejecutivo que acompaña al aplicativo de Streamlit. Mientras el aplicativo
 presenta la investigación estadística en detalle, el tablero ofrece la **lectura visual
 de las métricas macro** sobre los 1.880.465 incendios del período.
@@ -16,6 +18,7 @@ de las métricas macro** sobre los 1.880.465 incendios del período.
 | Campos calculados con su fórmula exacta | ✅ [`calculos/campos-calculados.md`](calculos/campos-calculados.md) |
 | Registro de transformaciones | ✅ [`preparacion/transformacion-datos.md`](preparacion/transformacion-datos.md) |
 | Libro `.twb` armado | ✅ `Origen_del_Fuego_EEUU_1992_2015.twb`, generado por código y verificado abriéndolo en Tableau Desktop |
+| Publicado en Tableau Public | ✅ [Ver en línea](https://public.tableau.com/app/profile/oliver.triveno/viz/Origen_del_Fuego_EEUU_1992_2015/1_Panoramadelorigen) |
 
 **El libro está construido y verificado.** Se genera por código con
 [`construir_libro.py`](construir_libro.py) y se comprobó abriéndolo en Tableau Desktop:

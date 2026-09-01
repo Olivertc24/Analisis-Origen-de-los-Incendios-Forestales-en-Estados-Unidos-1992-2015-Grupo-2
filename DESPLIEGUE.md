@@ -43,7 +43,10 @@ los registros de construcción, reiniciarla o eliminarla.
 
 ---
 
-## 2. Tablero en Tableau Public
+## 2. Tablero en Tableau Public ✅ publicado
+
+**https://public.tableau.com/app/profile/oliver.triveno/viz/Origen_del_Fuego_EEUU_1992_2015/1_Panoramadelorigen**
+
 
 ### Estado actual
 
@@ -99,4 +102,4 @@ Páginas del tablero:
 | Producto | Requisito | Acción |
 |---|---|---|
 | Aplicativo Streamlit | — | ✅ Publicado en https://incendios-eeuu-grupo2.streamlit.app |
-| Tablero Tableau | Cuenta de Tableau Público | Abrir `Tableau/Origen_del_Fuego_EEUU_1992_2015.twb` y usar *Servidor → Tableau Public → Guardar* |
+| Tablero Tableau | — | ✅ Publicado en [Tableau Public](https://public.tableau.com/app/profile/oliver.triveno/viz/Origen_del_Fuego_EEUU_1992_2015/1_Panoramadelorigen) |
