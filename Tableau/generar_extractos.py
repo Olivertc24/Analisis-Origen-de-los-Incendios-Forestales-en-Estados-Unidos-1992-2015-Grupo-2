@@ -149,6 +149,10 @@ CONSULTA_HECHOS = """
 # antes de aplicar las uniones y devolviendo muchas menos filas de las pedidas.
 CONSULTA_MUESTRA = f"""
     SELECT
+        -- Identificador de fila. Es el campo de DETALLE del mapa: sin el,
+        -- Tableau promedia las coordenadas y dibuja un solo punto por categoria
+        -- en lugar de los 40.000 focos.
+        ROW_NUMBER() OVER ()            AS "Id foco",
         i.latitude                      AS "Latitud",
         i.longitude                     AS "Longitud",
         i.fire_year                     AS "Anio",
