@@ -1,0 +1,1877 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<workbook source-build="0.0.0 (0000.25.1024.2150)" source-platform='mac' version='18.1' xmlns:user='http://www.tableausoftware.com/xml/user'>
+  <document-format-change-manifest>
+    <_.fcp.AccessibleZoneTabOrder.true...AccessibleZoneTabOrder />
+    <_.fcp.AnimationOnByDefault.true...AnimationOnByDefault />
+    <AutoCreateAndUpdateDSDPhoneLayouts />
+    <_.fcp.MarkAnimation.true...MarkAnimation />
+    <_.fcp.ObjectModelEncapsulateLegacy.true...ObjectModelEncapsulateLegacy />
+    <_.fcp.ObjectModelTableType.true...ObjectModelTableType />
+    <_.fcp.SchemaViewerObjectModel.true...SchemaViewerObjectModel />
+    <SetMembershipControl />
+    <SheetIdentifierTracking />
+    <SortTagCleanup />
+    <WindowsPersistSimpleIdentifiers />
+  </document-format-change-manifest>
+  <preferences>
+    <preference name='ui.encoding.shelf.height' value='24' />
+    <preference name='ui.shelf.height' value='26' />
+  </preferences>
+  <datasources>
+  <datasource caption="Hechos incendios" inline='true' name='federated.hechosincendios' version='18.1'>
+    <connection class='federated'>
+      <named-connections>
+        <named-connection caption="Hechos incendios" name='textscan.hechosincendios'>
+          <connection auto-extract='no' character-set='UTF-8' class='textscan' directory='extractos' driver='' filename="hechos_incendios.csv" force-character-set='no' force-header='no' force-separator='no' header='yes' separator=',' text-qualifier='&quot;' />
+        </named-connection>
+      </named-connections>
+      <relation connection='textscan.hechosincendios' name='hechos_incendios#csv' table='[hechos_incendios#csv]' type='table'>
+        <columns character-set='UTF-8' header='yes' locale='en_US' separator=',' text-qualifier='&quot;'>
+          <column datatype='integer' name="Anio" ordinal='0' />
+          <column datatype='integer' name="Mes" ordinal='1' />
+          <column datatype='string' name="Mes abrev" ordinal='2' />
+          <column datatype='string' name="Estacion" ordinal='3' />
+          <column datatype='string' name="Temporada de fuego" ordinal='4' />
+          <column datatype='string' name="Codigo estado" ordinal='5' />
+          <column datatype='string' name="Estado" ordinal='6' />
+          <column datatype='string' name="Region censal" ordinal='7' />
+          <column datatype='string' name="Origen del fuego" ordinal='8' />
+          <column datatype='string' name="Causa" ordinal='9' />
+          <column datatype='string' name="Clase de tamano" ordinal='10' />
+          <column datatype='integer' name="Orden de clase" ordinal='11' />
+          <column datatype='string' name="Sector de propiedad" ordinal='12' />
+          <column datatype='integer' name="N incendios" ordinal='13' />
+          <column datatype='real' name="Acres" ordinal='14' />
+          <column datatype='real' name="Hectareas" ordinal='15' />
+          <column datatype='integer' name="N grandes incendios" ordinal='16' />
+        </columns>
+      </relation>
+      <refresh increment-key='' incremental-updates='false' />
+      <metadata-records>
+        <metadata-record class='column'>
+          <remote-name>Anio</remote-name>
+          <remote-type>20</remote-type>
+          <local-name>[Anio]</local-name>
+          <parent-name>[hechos_incendios#csv]</parent-name>
+          <remote-alias>Anio</remote-alias>
+          <ordinal>0</ordinal>
+          <local-type>integer</local-type>
+          <aggregation>Count</aggregation>
+          <contains-null>true</contains-null>
+        </metadata-record>
+        <metadata-record class='column'>
+          <remote-name>Mes</remote-name>
+          <remote-type>20</remote-type>
+          <local-name>[Mes]</local-name>
+          <parent-name>[hechos_incendios#csv]</parent-name>
+          <remote-alias>Mes</remote-alias>
+          <ordinal>1</ordinal>
+          <local-type>integer</local-type>
+          <aggregation>Count</aggregation>
+          <contains-null>true</contains-null>
+        </metadata-record>
+        <metadata-record class='column'>
+          <remote-name>Mes abrev</remote-name>
+          <remote-type>129</remote-type>
+          <local-name>[Mes abrev]</local-name>
+          <parent-name>[hechos_incendios#csv]</parent-name>
+          <remote-alias>Mes abrev</remote-alias>
+          <ordinal>2</ordinal>
+          <local-type>string</local-type>
+          <aggregation>Count</aggregation>
+          <contains-null>true</contains-null>
+        </metadata-record>
+        <metadata-record class='column'>
+          <remote-name>Estacion</remote-name>
+          <remote-type>129</remote-type>
+          <local-name>[Estacion]</local-name>
+          <parent-name>[hechos_incendios#csv]</parent-name>
+          <remote-alias>Estacion</remote-alias>
+          <ordinal>3</ordinal>
+          <local-type>string</local-type>
+          <aggregation>Count</aggregation>
+          <contains-null>true</contains-null>
+        </metadata-record>
+        <metadata-record class='column'>
+          <remote-name>Temporada de fuego</remote-name>
+          <remote-type>129</remote-type>
+          <local-name>[Temporada de fuego]</local-name>
+          <parent-name>[hechos_incendios#csv]</parent-name>
+          <remote-alias>Temporada de fuego</remote-alias>
+          <ordinal>4</ordinal>
+          <local-type>string</local-type>
+          <aggregation>Count</aggregation>
+          <contains-null>true</contains-null>
+        </metadata-record>
+        <metadata-record class='column'>
+          <remote-name>Codigo estado</remote-name>
+          <remote-type>129</remote-type>
+          <local-name>[Codigo estado]</local-name>
+          <parent-name>[hechos_incendios#csv]</parent-name>
+          <remote-alias>Codigo estado</remote-alias>
+          <ordinal>5</ordinal>
+          <local-type>string</local-type>
+          <aggregation>Count</aggregation>
+          <contains-null>true</contains-null>
+        </metadata-record>
+        <metadata-record class='column'>
+          <remote-name>Estado</remote-name>
+          <remote-type>129</remote-type>
+          <local-name>[Estado]</local-name>
+          <parent-name>[hechos_incendios#csv]</parent-name>
+          <remote-alias>Estado</remote-alias>
+          <ordinal>6</ordinal>
+          <local-type>string</local-type>
+          <aggregation>Count</aggregation>
+          <contains-null>true</contains-null>
+        </metadata-record>
+        <metadata-record class='column'>
+          <remote-name>Region censal</remote-name>
+          <remote-type>129</remote-type>
+          <local-name>[Region censal]</local-name>
+          <parent-name>[hechos_incendios#csv]</parent-name>
+          <remote-alias>Region censal</remote-alias>
+          <ordinal>7</ordinal>
+          <local-type>string</local-type>
+          <aggregation>Count</aggregation>
+          <contains-null>true</contains-null>
+        </metadata-record>
+        <metadata-record class='column'>
+          <remote-name>Origen del fuego</remote-name>
+          <remote-type>129</remote-type>
+          <local-name>[Origen del fuego]</local-name>
+          <parent-name>[hechos_incendios#csv]</parent-name>
+          <remote-alias>Origen del fuego</remote-alias>
+          <ordinal>8</ordinal>
+          <local-type>string</local-type>
+          <aggregation>Count</aggregation>
+          <contains-null>true</contains-null>
+        </metadata-record>
+        <metadata-record class='column'>
+          <remote-name>Causa</remote-name>
+          <remote-type>129</remote-type>
+          <local-name>[Causa]</local-name>
+          <parent-name>[hechos_incendios#csv]</parent-name>
+          <remote-alias>Causa</remote-alias>
+          <ordinal>9</ordinal>
+          <local-type>string</local-type>
+          <aggregation>Count</aggregation>
+          <contains-null>true</contains-null>
+        </metadata-record>
+        <metadata-record class='column'>
+          <remote-name>Clase de tamano</remote-name>
+          <remote-type>129</remote-type>
+          <local-name>[Clase de tamano]</local-name>
+          <parent-name>[hechos_incendios#csv]</parent-name>
+          <remote-alias>Clase de tamano</remote-alias>
+          <ordinal>10</ordinal>
+          <local-type>string</local-type>
+          <aggregation>Count</aggregation>
+          <contains-null>true</contains-null>
+        </metadata-record>
+        <metadata-record class='column'>
+          <remote-name>Orden de clase</remote-name>
+          <remote-type>20</remote-type>
+          <local-name>[Orden de clase]</local-name>
+          <parent-name>[hechos_incendios#csv]</parent-name>
+          <remote-alias>Orden de clase</remote-alias>
+          <ordinal>11</ordinal>
+          <local-type>integer</local-type>
+          <aggregation>Count</aggregation>
+          <contains-null>true</contains-null>
+        </metadata-record>
+        <metadata-record class='column'>
+          <remote-name>Sector de propiedad</remote-name>
+          <remote-type>129</remote-type>
+          <local-name>[Sector de propiedad]</local-name>
+          <parent-name>[hechos_incendios#csv]</parent-name>
+          <remote-alias>Sector de propiedad</remote-alias>
+          <ordinal>12</ordinal>
+          <local-type>string</local-type>
+          <aggregation>Count</aggregation>
+          <contains-null>true</contains-null>
+        </metadata-record>
+        <metadata-record class='column'>
+          <remote-name>N incendios</remote-name>
+          <remote-type>20</remote-type>
+          <local-name>[N incendios]</local-name>
+          <parent-name>[hechos_incendios#csv]</parent-name>
+          <remote-alias>N incendios</remote-alias>
+          <ordinal>13</ordinal>
+          <local-type>integer</local-type>
+          <aggregation>Sum</aggregation>
+          <contains-null>true</contains-null>
+        </metadata-record>
+        <metadata-record class='column'>
+          <remote-name>Acres</remote-name>
+          <remote-type>5</remote-type>
+          <local-name>[Acres]</local-name>
+          <parent-name>[hechos_incendios#csv]</parent-name>
+          <remote-alias>Acres</remote-alias>
+          <ordinal>14</ordinal>
+          <local-type>real</local-type>
+          <aggregation>Sum</aggregation>
+          <contains-null>true</contains-null>
+        </metadata-record>
+        <metadata-record class='column'>
+          <remote-name>Hectareas</remote-name>
+          <remote-type>5</remote-type>
+          <local-name>[Hectareas]</local-name>
+          <parent-name>[hechos_incendios#csv]</parent-name>
+          <remote-alias>Hectareas</remote-alias>
+          <ordinal>15</ordinal>
+          <local-type>real</local-type>
+          <aggregation>Sum</aggregation>
+          <contains-null>true</contains-null>
+        </metadata-record>
+        <metadata-record class='column'>
+          <remote-name>N grandes incendios</remote-name>
+          <remote-type>20</remote-type>
+          <local-name>[N grandes incendios]</local-name>
+          <parent-name>[hechos_incendios#csv]</parent-name>
+          <remote-alias>N grandes incendios</remote-alias>
+          <ordinal>16</ordinal>
+          <local-type>integer</local-type>
+          <aggregation>Sum</aggregation>
+          <contains-null>true</contains-null>
+        </metadata-record>
+      </metadata-records>
+    </connection>
+    <aliases enabled='yes' />
+    <column datatype='integer' name="[Anio]" role='dimension' type='ordinal' />
+    <column datatype='integer' name="[Mes]" role='dimension' type='ordinal' />
+    <column datatype='string' name="[Mes abrev]" role='dimension' type='nominal' />
+    <column datatype='string' name="[Estacion]" role='dimension' type='nominal' />
+    <column datatype='string' name="[Temporada de fuego]" role='dimension' type='nominal' />
+    <column datatype='string' name="[Codigo estado]" role='dimension' type='nominal' />
+    <column datatype='string' name="[Estado]" role='dimension' type='nominal' />
+    <column datatype='string' name="[Region censal]" role='dimension' type='nominal' />
+    <column datatype='string' name="[Origen del fuego]" role='dimension' type='nominal' />
+    <column datatype='string' name="[Causa]" role='dimension' type='nominal' />
+    <column datatype='string' name="[Clase de tamano]" role='dimension' type='nominal' />
+    <column datatype='integer' name="[Orden de clase]" role='dimension' type='ordinal' />
+    <column datatype='string' name="[Sector de propiedad]" role='dimension' type='nominal' />
+    <column datatype='integer' name="[N incendios]" role='measure' type='quantitative' />
+    <column datatype='real' name="[Acres]" role='measure' type='quantitative' />
+    <column datatype='real' name="[Hectareas]" role='measure' type='quantitative' />
+    <column datatype='integer' name="[N grandes incendios]" role='measure' type='quantitative' />
+    <column caption="Acres promedio por incendio" datatype='real' default-format="n#,##0.00" name='[AcresPromedio]' role='measure' type='quantitative'>
+      <calculation class='tableau' formula="SUM([Acres]) / SUM([N incendios])" scope-isolation='false' />
+    </column>
+    <column caption="% de grandes incendios" datatype='real' default-format="p0.00%" name='[PctGrandes]' role='measure' type='quantitative'>
+      <calculation class='tableau' formula="SUM([N grandes incendios]) / SUM([N incendios])" scope-isolation='false' />
+    </column>
+    <column caption="% de eventos sobre el total" datatype='real' default-format="p0.00%" name='[PctEventos]' role='measure' type='quantitative'>
+      <calculation class='tableau' formula="SUM([N incendios]) / TOTAL(SUM([N incendios]))" scope-isolation='false' />
+    </column>
+    <column caption="% de superficie sobre el total" datatype='real' default-format="p0.00%" name='[PctAcres]' role='measure' type='quantitative'>
+      <calculation class='tableau' formula="SUM([Acres]) / TOTAL(SUM([Acres]))" scope-isolation='false' />
+    </column>
+    <column caption="Indice de severidad relativa" datatype='real' default-format="n#,##0.00" name='[SeveridadRelativa]' role='measure' type='quantitative'>
+      <calculation class='tableau' formula="(SUM([Acres]) / SUM([N incendios])) / TOTAL(SUM([Acres]) / SUM([N incendios]))" scope-isolation='false' />
+    </column>
+    <column caption="Origen del fuego" datatype='string' name='[OrigenFuego]' role='dimension' type='nominal'>
+      <calculation class='tableau' formula="[Origen del fuego]" scope-isolation='false' />
+    </column>
+    <column-instance column='[OrigenFuego]' derivation='None' name="[none:OrigenFuego:nk]" pivot='key' type='nominal' />
+    <layout dim-ordering='alphabetic' measure-ordering='alphabetic' show-structure='true' />
+    <style>
+      <style-rule element='mark'>
+        <encoding attr='color' field="[none:OrigenFuego:nk]" type='palette'>
+          <map to='#f25c05'>
+            <bucket>&quot;Antropico&quot;</bucket>
+          </map>
+          <map to='#4fa3f7'>
+            <bucket>&quot;Natural&quot;</bucket>
+          </map>
+          <map to='#8c8c8c'>
+            <bucket>&quot;No determinado&quot;</bucket>
+          </map>
+        </encoding>
+      </style-rule>
+    </style>
+  </datasource>
+  <datasource caption="Focos muestra" inline='true' name='federated.focosmuestra' version='18.1'>
+    <connection class='federated'>
+      <named-connections>
+        <named-connection caption="Focos muestra" name='textscan.focosmuestra'>
+          <connection auto-extract='no' character-set='UTF-8' class='textscan' directory='extractos' driver='' filename="focos_muestra.csv" force-character-set='no' force-header='no' force-separator='no' header='yes' separator=',' text-qualifier='&quot;' />
+        </named-connection>
+      </named-connections>
+      <relation connection='textscan.focosmuestra' name='focos_muestra#csv' table='[focos_muestra#csv]' type='table'>
+        <columns character-set='UTF-8' header='yes' locale='en_US' separator=',' text-qualifier='&quot;'>
+          <column datatype='integer' name="Id foco" ordinal='0' />
+          <column datatype='real' name="Latitud" ordinal='1' />
+          <column datatype='real' name="Longitud" ordinal='2' />
+          <column datatype='integer' name="Anio" ordinal='3' />
+          <column datatype='string' name="Mes abrev" ordinal='4' />
+          <column datatype='string' name="Origen del fuego" ordinal='5' />
+          <column datatype='string' name="Causa" ordinal='6' />
+          <column datatype='string' name="Estado" ordinal='7' />
+          <column datatype='string' name="Clase de tamano" ordinal='8' />
+          <column datatype='real' name="Acres" ordinal='9' />
+          <column datatype='real' name="Peso logaritmico" ordinal='10' />
+        </columns>
+      </relation>
+      <refresh increment-key='' incremental-updates='false' />
+      <metadata-records>
+        <metadata-record class='column'>
+          <remote-name>Id foco</remote-name>
+          <remote-type>20</remote-type>
+          <local-name>[Id foco]</local-name>
+          <parent-name>[focos_muestra#csv]</parent-name>
+          <remote-alias>Id foco</remote-alias>
+          <ordinal>0</ordinal>
+          <local-type>integer</local-type>
+          <aggregation>Count</aggregation>
+          <contains-null>true</contains-null>
+        </metadata-record>
+        <metadata-record class='column'>
+          <remote-name>Latitud</remote-name>
+          <remote-type>5</remote-type>
+          <local-name>[Latitud]</local-name>
+          <parent-name>[focos_muestra#csv]</parent-name>
+          <remote-alias>Latitud</remote-alias>
+          <ordinal>1</ordinal>
+          <local-type>real</local-type>
+          <aggregation>Sum</aggregation>
+          <contains-null>true</contains-null>
+        </metadata-record>
+        <metadata-record class='column'>
+          <remote-name>Longitud</remote-name>
+          <remote-type>5</remote-type>
+          <local-name>[Longitud]</local-name>
+          <parent-name>[focos_muestra#csv]</parent-name>
+          <remote-alias>Longitud</remote-alias>
+          <ordinal>2</ordinal>
+          <local-type>real</local-type>
+          <aggregation>Sum</aggregation>
+          <contains-null>true</contains-null>
+        </metadata-record>
+        <metadata-record class='column'>
+          <remote-name>Anio</remote-name>
+          <remote-type>20</remote-type>
+          <local-name>[Anio]</local-name>
+          <parent-name>[focos_muestra#csv]</parent-name>
+          <remote-alias>Anio</remote-alias>
+          <ordinal>3</ordinal>
+          <local-type>integer</local-type>
+          <aggregation>Count</aggregation>
+          <contains-null>true</contains-null>
+        </metadata-record>
+        <metadata-record class='column'>
+          <remote-name>Mes abrev</remote-name>
+          <remote-type>129</remote-type>
+          <local-name>[Mes abrev]</local-name>
+          <parent-name>[focos_muestra#csv]</parent-name>
+          <remote-alias>Mes abrev</remote-alias>
+          <ordinal>4</ordinal>
+          <local-type>string</local-type>
+          <aggregation>Count</aggregation>
+          <contains-null>true</contains-null>
+        </metadata-record>
+        <metadata-record class='column'>
+          <remote-name>Origen del fuego</remote-name>
+          <remote-type>129</remote-type>
+          <local-name>[Origen del fuego]</local-name>
+          <parent-name>[focos_muestra#csv]</parent-name>
+          <remote-alias>Origen del fuego</remote-alias>
+          <ordinal>5</ordinal>
+          <local-type>string</local-type>
+          <aggregation>Count</aggregation>
+          <contains-null>true</contains-null>
+        </metadata-record>
+        <metadata-record class='column'>
+          <remote-name>Causa</remote-name>
+          <remote-type>129</remote-type>
+          <local-name>[Causa]</local-name>
+          <parent-name>[focos_muestra#csv]</parent-name>
+          <remote-alias>Causa</remote-alias>
+          <ordinal>6</ordinal>
+          <local-type>string</local-type>
+          <aggregation>Count</aggregation>
+          <contains-null>true</contains-null>
+        </metadata-record>
+        <metadata-record class='column'>
+          <remote-name>Estado</remote-name>
+          <remote-type>129</remote-type>
+          <local-name>[Estado]</local-name>
+          <parent-name>[focos_muestra#csv]</parent-name>
+          <remote-alias>Estado</remote-alias>
+          <ordinal>7</ordinal>
+          <local-type>string</local-type>
+          <aggregation>Count</aggregation>
+          <contains-null>true</contains-null>
+        </metadata-record>
+        <metadata-record class='column'>
+          <remote-name>Clase de tamano</remote-name>
+          <remote-type>129</remote-type>
+          <local-name>[Clase de tamano]</local-name>
+          <parent-name>[focos_muestra#csv]</parent-name>
+          <remote-alias>Clase de tamano</remote-alias>
+          <ordinal>8</ordinal>
+          <local-type>string</local-type>
+          <aggregation>Count</aggregation>
+          <contains-null>true</contains-null>
+        </metadata-record>
+        <metadata-record class='column'>
+          <remote-name>Acres</remote-name>
+          <remote-type>5</remote-type>
+          <local-name>[Acres]</local-name>
+          <parent-name>[focos_muestra#csv]</parent-name>
+          <remote-alias>Acres</remote-alias>
+          <ordinal>9</ordinal>
+          <local-type>real</local-type>
+          <aggregation>Sum</aggregation>
+          <contains-null>true</contains-null>
+        </metadata-record>
+        <metadata-record class='column'>
+          <remote-name>Peso logaritmico</remote-name>
+          <remote-type>5</remote-type>
+          <local-name>[Peso logaritmico]</local-name>
+          <parent-name>[focos_muestra#csv]</parent-name>
+          <remote-alias>Peso logaritmico</remote-alias>
+          <ordinal>10</ordinal>
+          <local-type>real</local-type>
+          <aggregation>Sum</aggregation>
+          <contains-null>true</contains-null>
+        </metadata-record>
+      </metadata-records>
+    </connection>
+    <aliases enabled='yes' />
+    <column datatype='integer' name="[Id foco]" role='dimension' type='ordinal' />
+    <column datatype='real' name="[Latitud]" role='measure' semantic-role="[Latitude]" type='quantitative' />
+    <column datatype='real' name="[Longitud]" role='measure' semantic-role="[Longitude]" type='quantitative' />
+    <column datatype='integer' name="[Anio]" role='dimension' type='ordinal' />
+    <column datatype='string' name="[Mes abrev]" role='dimension' type='nominal' />
+    <column datatype='string' name="[Origen del fuego]" role='dimension' type='nominal' />
+    <column datatype='string' name="[Causa]" role='dimension' type='nominal' />
+    <column datatype='string' name="[Estado]" role='dimension' type='nominal' />
+    <column datatype='string' name="[Clase de tamano]" role='dimension' type='nominal' />
+    <column datatype='real' name="[Acres]" role='measure' type='quantitative' />
+    <column datatype='real' name="[Peso logaritmico]" role='measure' type='quantitative' />
+    <column caption="Origen del fuego" datatype='string' name='[OrigenFuego]' role='dimension' type='nominal'>
+      <calculation class='tableau' formula="[Origen del fuego]" scope-isolation='false' />
+    </column>
+    <column-instance column='[OrigenFuego]' derivation='None' name="[none:OrigenFuego:nk]" pivot='key' type='nominal' />
+    <layout dim-ordering='alphabetic' measure-ordering='alphabetic' show-structure='true' />
+    <style>
+      <style-rule element='mark'>
+        <encoding attr='color' field="[none:OrigenFuego:nk]" type='palette'>
+          <map to='#f25c05'>
+            <bucket>&quot;Antropico&quot;</bucket>
+          </map>
+          <map to='#4fa3f7'>
+            <bucket>&quot;Natural&quot;</bucket>
+          </map>
+          <map to='#8c8c8c'>
+            <bucket>&quot;No determinado&quot;</bucket>
+          </map>
+        </encoding>
+      </style-rule>
+    </style>
+  </datasource>
+  </datasources>
+  <worksheets>
+    <worksheet name="Eventos por origen">
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run fontcolor='#4A3B33' fontsize='11'>Numero de incendios segun origen del fuego</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption="Hechos incendios" name='federated.hechosincendios' />
+          </datasources>
+          <datasource-dependencies datasource='federated.hechosincendios'>
+            <column datatype='integer' name="[Anio]" role='dimension' type='ordinal' />
+            <column datatype='string' name="[Region censal]" role='dimension' type='nominal' />
+            <column datatype='integer' name="[N incendios]" role='measure' type='quantitative' />
+            <column-instance column="[Anio]" derivation='None' name="[none:Anio:ok]" pivot='key' type='ordinal' />
+            <column-instance column="[Region censal]" derivation='None' name="[none:Region censal:nk]" pivot='key' type='nominal' />
+            <column-instance column="[N incendios]" derivation='Sum' name="[sum:N incendios:qk]" pivot='key' type='quantitative' />
+            <column caption="Origen del fuego" datatype='string' name='[OrigenFuego]' role='dimension' type='nominal'>
+              <calculation class='tableau' formula="[Origen del fuego]" scope-isolation='false' />
+            </column>
+            <column-instance column='[OrigenFuego]' derivation='None' name="[none:OrigenFuego:nk]" pivot='key' type='nominal' />
+          </datasource-dependencies>
+          <filter class='categorical' column="[federated.hechosincendios].[none:Anio:ok]" filter-group='100'>
+            <groupfilter function='level-members' level="[none:Anio:ok]" user:ui-enumeration='all' user:ui-marker='enumerate' />
+          </filter>
+          <filter class='categorical' column="[federated.hechosincendios].[none:Region censal:nk]" filter-group='101'>
+            <groupfilter function='level-members' level="[none:Region censal:nk]" user:ui-enumeration='all' user:ui-marker='enumerate' />
+          </filter>
+          <slices>
+            <column>[federated.hechosincendios].[none:Anio:ok]</column>
+            <column>[federated.hechosincendios].[none:Region censal:nk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='worksheet'>
+            <format attr='display-field-labels' scope='rows' value='false' />
+            <format attr='display-field-labels' scope='cols' value='false' />
+          </style-rule>
+          <style-rule element='pane'>
+            <format attr='background-color' value='#FFFFFF' />
+          </style-rule>
+          <style-rule element='axis'>
+            <format attr='color' value='#7A6A60' />
+          </style-rule>
+          <style-rule element='header'>
+            <format attr='color' value='#4A3B33' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Bar' />
+            <encodings>
+              <color column="[federated.hechosincendios].[none:OrigenFuego:nk]" />
+            </encodings>
+          </pane>
+        </panes>
+        <rows>[federated.hechosincendios].[sum:N incendios:qk]</rows>
+        <cols>[federated.hechosincendios].[none:OrigenFuego:nk]</cols>
+      </table>
+      <simple-id uuid='{76D82046-6EA3-53F8-B42F-7C6F002EAEF2}' />
+    </worksheet>
+    <worksheet name="Superficie por origen">
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run fontcolor='#4A3B33' fontsize='11'>Superficie quemada segun origen del fuego</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption="Hechos incendios" name='federated.hechosincendios' />
+          </datasources>
+          <datasource-dependencies datasource='federated.hechosincendios'>
+            <column datatype='integer' name="[Anio]" role='dimension' type='ordinal' />
+            <column datatype='string' name="[Region censal]" role='dimension' type='nominal' />
+            <column datatype='real' name="[Acres]" role='measure' type='quantitative' />
+            <column-instance column="[Anio]" derivation='None' name="[none:Anio:ok]" pivot='key' type='ordinal' />
+            <column-instance column="[Region censal]" derivation='None' name="[none:Region censal:nk]" pivot='key' type='nominal' />
+            <column-instance column="[Acres]" derivation='Sum' name="[sum:Acres:qk]" pivot='key' type='quantitative' />
+            <column caption="Origen del fuego" datatype='string' name='[OrigenFuego]' role='dimension' type='nominal'>
+              <calculation class='tableau' formula="[Origen del fuego]" scope-isolation='false' />
+            </column>
+            <column-instance column='[OrigenFuego]' derivation='None' name="[none:OrigenFuego:nk]" pivot='key' type='nominal' />
+          </datasource-dependencies>
+          <filter class='categorical' column="[federated.hechosincendios].[none:Anio:ok]" filter-group='100'>
+            <groupfilter function='level-members' level="[none:Anio:ok]" user:ui-enumeration='all' user:ui-marker='enumerate' />
+          </filter>
+          <filter class='categorical' column="[federated.hechosincendios].[none:Region censal:nk]" filter-group='101'>
+            <groupfilter function='level-members' level="[none:Region censal:nk]" user:ui-enumeration='all' user:ui-marker='enumerate' />
+          </filter>
+          <slices>
+            <column>[federated.hechosincendios].[none:Anio:ok]</column>
+            <column>[federated.hechosincendios].[none:Region censal:nk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='worksheet'>
+            <format attr='display-field-labels' scope='rows' value='false' />
+            <format attr='display-field-labels' scope='cols' value='false' />
+          </style-rule>
+          <style-rule element='pane'>
+            <format attr='background-color' value='#FFFFFF' />
+          </style-rule>
+          <style-rule element='axis'>
+            <format attr='color' value='#7A6A60' />
+          </style-rule>
+          <style-rule element='header'>
+            <format attr='color' value='#4A3B33' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Bar' />
+            <encodings>
+              <color column="[federated.hechosincendios].[none:OrigenFuego:nk]" />
+            </encodings>
+          </pane>
+        </panes>
+        <rows>[federated.hechosincendios].[sum:Acres:qk]</rows>
+        <cols>[federated.hechosincendios].[none:OrigenFuego:nk]</cols>
+      </table>
+      <simple-id uuid='{CF2BF61F-2864-564C-8C68-FFA473F52B62}' />
+    </worksheet>
+    <worksheet name="Estacionalidad por origen">
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run fontcolor='#4A3B33' fontsize='11'>Distribucion mensual de incendios segun origen</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption="Hechos incendios" name='federated.hechosincendios' />
+          </datasources>
+          <datasource-dependencies datasource='federated.hechosincendios'>
+            <column datatype='integer' name="[Mes]" role='dimension' type='ordinal' />
+            <column datatype='integer' name="[Anio]" role='dimension' type='ordinal' />
+            <column datatype='string' name="[Region censal]" role='dimension' type='nominal' />
+            <column datatype='integer' name="[N incendios]" role='measure' type='quantitative' />
+            <column-instance column="[Mes]" derivation='None' name="[none:Mes:ok]" pivot='key' type='ordinal' />
+            <column-instance column="[Anio]" derivation='None' name="[none:Anio:ok]" pivot='key' type='ordinal' />
+            <column-instance column="[Region censal]" derivation='None' name="[none:Region censal:nk]" pivot='key' type='nominal' />
+            <column-instance column="[N incendios]" derivation='Sum' name="[sum:N incendios:qk]" pivot='key' type='quantitative' />
+            <column caption="Origen del fuego" datatype='string' name='[OrigenFuego]' role='dimension' type='nominal'>
+              <calculation class='tableau' formula="[Origen del fuego]" scope-isolation='false' />
+            </column>
+            <column-instance column='[OrigenFuego]' derivation='None' name="[none:OrigenFuego:nk]" pivot='key' type='nominal' />
+          </datasource-dependencies>
+          <filter class='categorical' column="[federated.hechosincendios].[none:Anio:ok]" filter-group='100'>
+            <groupfilter function='level-members' level="[none:Anio:ok]" user:ui-enumeration='all' user:ui-marker='enumerate' />
+          </filter>
+          <filter class='categorical' column="[federated.hechosincendios].[none:Region censal:nk]" filter-group='101'>
+            <groupfilter function='level-members' level="[none:Region censal:nk]" user:ui-enumeration='all' user:ui-marker='enumerate' />
+          </filter>
+          <slices>
+            <column>[federated.hechosincendios].[none:Anio:ok]</column>
+            <column>[federated.hechosincendios].[none:Region censal:nk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='worksheet'>
+            <format attr='display-field-labels' scope='rows' value='false' />
+            <format attr='display-field-labels' scope='cols' value='false' />
+          </style-rule>
+          <style-rule element='pane'>
+            <format attr='background-color' value='#FFFFFF' />
+          </style-rule>
+          <style-rule element='axis'>
+            <format attr='color' value='#7A6A60' />
+          </style-rule>
+          <style-rule element='header'>
+            <format attr='color' value='#4A3B33' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Line' />
+            <encodings>
+              <color column="[federated.hechosincendios].[none:OrigenFuego:nk]" />
+            </encodings>
+          </pane>
+        </panes>
+        <rows>[federated.hechosincendios].[sum:N incendios:qk]</rows>
+        <cols>[federated.hechosincendios].[none:Mes:ok]</cols>
+      </table>
+      <simple-id uuid='{F8AE60C9-1152-5C6D-95DB-07CD1832EFF9}' />
+    </worksheet>
+    <worksheet name="Severidad media por origen">
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run fontcolor='#4A3B33' fontsize='11'>Acres promedio por incendio segun origen</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption="Hechos incendios" name='federated.hechosincendios' />
+          </datasources>
+          <datasource-dependencies datasource='federated.hechosincendios'>
+            <column datatype='integer' name="[Anio]" role='dimension' type='ordinal' />
+            <column datatype='string' name="[Region censal]" role='dimension' type='nominal' />
+            <column datatype='integer' name="[N incendios]" role='measure' type='quantitative' />
+            <column datatype='real' name="[Acres]" role='measure' type='quantitative' />
+            <column-instance column="[Anio]" derivation='None' name="[none:Anio:ok]" pivot='key' type='ordinal' />
+            <column-instance column="[Region censal]" derivation='None' name="[none:Region censal:nk]" pivot='key' type='nominal' />
+            <column-instance column="[N incendios]" derivation='Sum' name="[sum:N incendios:qk]" pivot='key' type='quantitative' />
+            <column-instance column="[Acres]" derivation='Sum' name="[sum:Acres:qk]" pivot='key' type='quantitative' />
+            <column caption="Origen del fuego" datatype='string' name='[OrigenFuego]' role='dimension' type='nominal'>
+              <calculation class='tableau' formula="[Origen del fuego]" scope-isolation='false' />
+            </column>
+            <column-instance column='[OrigenFuego]' derivation='None' name="[none:OrigenFuego:nk]" pivot='key' type='nominal' />
+            <column caption="Acres promedio por incendio" datatype='real' default-format="n#,##0.00" name='[AcresPromedio]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula="SUM([Acres]) / SUM([N incendios])" scope-isolation='false' />
+            </column>
+            <column-instance column='[AcresPromedio]' derivation='User' name="[usr:AcresPromedio:qk]" pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='categorical' column="[federated.hechosincendios].[none:Anio:ok]" filter-group='100'>
+            <groupfilter function='level-members' level="[none:Anio:ok]" user:ui-enumeration='all' user:ui-marker='enumerate' />
+          </filter>
+          <filter class='categorical' column="[federated.hechosincendios].[none:Region censal:nk]" filter-group='101'>
+            <groupfilter function='level-members' level="[none:Region censal:nk]" user:ui-enumeration='all' user:ui-marker='enumerate' />
+          </filter>
+          <slices>
+            <column>[federated.hechosincendios].[none:Anio:ok]</column>
+            <column>[federated.hechosincendios].[none:Region censal:nk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='worksheet'>
+            <format attr='display-field-labels' scope='rows' value='false' />
+            <format attr='display-field-labels' scope='cols' value='false' />
+          </style-rule>
+          <style-rule element='pane'>
+            <format attr='background-color' value='#FFFFFF' />
+          </style-rule>
+          <style-rule element='axis'>
+            <format attr='color' value='#7A6A60' />
+          </style-rule>
+          <style-rule element='header'>
+            <format attr='color' value='#4A3B33' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Bar' />
+            <encodings>
+              <color column="[federated.hechosincendios].[none:OrigenFuego:nk]" />
+            </encodings>
+          </pane>
+        </panes>
+        <rows>[federated.hechosincendios].[usr:AcresPromedio:qk]</rows>
+        <cols>[federated.hechosincendios].[none:OrigenFuego:nk]</cols>
+      </table>
+      <simple-id uuid='{0A9DB750-6C2B-54D5-BCA6-252EA1FDF9E5}' />
+    </worksheet>
+    <worksheet name="Piramide de clases">
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run fontcolor='#4A3B33' fontsize='11'>Incendios por clase de tamano NWCG</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption="Hechos incendios" name='federated.hechosincendios' />
+          </datasources>
+          <datasource-dependencies datasource='federated.hechosincendios'>
+            <column datatype='string' name="[Clase de tamano]" role='dimension' type='nominal' />
+            <column datatype='integer' name="[Anio]" role='dimension' type='ordinal' />
+            <column datatype='string' name="[Region censal]" role='dimension' type='nominal' />
+            <column datatype='integer' name="[N incendios]" role='measure' type='quantitative' />
+            <column-instance column="[Clase de tamano]" derivation='None' name="[none:Clase de tamano:nk]" pivot='key' type='nominal' />
+            <column-instance column="[Anio]" derivation='None' name="[none:Anio:ok]" pivot='key' type='ordinal' />
+            <column-instance column="[Region censal]" derivation='None' name="[none:Region censal:nk]" pivot='key' type='nominal' />
+            <column-instance column="[N incendios]" derivation='Sum' name="[sum:N incendios:qk]" pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='categorical' column="[federated.hechosincendios].[none:Anio:ok]" filter-group='100'>
+            <groupfilter function='level-members' level="[none:Anio:ok]" user:ui-enumeration='all' user:ui-marker='enumerate' />
+          </filter>
+          <filter class='categorical' column="[federated.hechosincendios].[none:Region censal:nk]" filter-group='101'>
+            <groupfilter function='level-members' level="[none:Region censal:nk]" user:ui-enumeration='all' user:ui-marker='enumerate' />
+          </filter>
+          <slices>
+            <column>[federated.hechosincendios].[none:Anio:ok]</column>
+            <column>[federated.hechosincendios].[none:Region censal:nk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='worksheet'>
+            <format attr='display-field-labels' scope='rows' value='false' />
+            <format attr='display-field-labels' scope='cols' value='false' />
+          </style-rule>
+          <style-rule element='pane'>
+            <format attr='background-color' value='#FFFFFF' />
+          </style-rule>
+          <style-rule element='axis'>
+            <format attr='color' value='#7A6A60' />
+          </style-rule>
+          <style-rule element='header'>
+            <format attr='color' value='#4A3B33' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Bar' />
+            <encodings>
+              <color column="[federated.hechosincendios].[none:Clase de tamano:nk]" />
+            </encodings>
+          </pane>
+        </panes>
+        <rows>[federated.hechosincendios].[none:Clase de tamano:nk]</rows>
+        <cols>[federated.hechosincendios].[sum:N incendios:qk]</cols>
+      </table>
+      <simple-id uuid='{3DF5732C-E637-5B02-A772-1759639E472C}' />
+    </worksheet>
+    <worksheet name="Superficie por clase">
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run fontcolor='#4A3B33' fontsize='11'>Superficie quemada por clase de tamano</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption="Hechos incendios" name='federated.hechosincendios' />
+          </datasources>
+          <datasource-dependencies datasource='federated.hechosincendios'>
+            <column datatype='string' name="[Clase de tamano]" role='dimension' type='nominal' />
+            <column datatype='integer' name="[Anio]" role='dimension' type='ordinal' />
+            <column datatype='string' name="[Region censal]" role='dimension' type='nominal' />
+            <column datatype='real' name="[Acres]" role='measure' type='quantitative' />
+            <column-instance column="[Clase de tamano]" derivation='None' name="[none:Clase de tamano:nk]" pivot='key' type='nominal' />
+            <column-instance column="[Anio]" derivation='None' name="[none:Anio:ok]" pivot='key' type='ordinal' />
+            <column-instance column="[Region censal]" derivation='None' name="[none:Region censal:nk]" pivot='key' type='nominal' />
+            <column-instance column="[Acres]" derivation='Sum' name="[sum:Acres:qk]" pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='categorical' column="[federated.hechosincendios].[none:Anio:ok]" filter-group='100'>
+            <groupfilter function='level-members' level="[none:Anio:ok]" user:ui-enumeration='all' user:ui-marker='enumerate' />
+          </filter>
+          <filter class='categorical' column="[federated.hechosincendios].[none:Region censal:nk]" filter-group='101'>
+            <groupfilter function='level-members' level="[none:Region censal:nk]" user:ui-enumeration='all' user:ui-marker='enumerate' />
+          </filter>
+          <slices>
+            <column>[federated.hechosincendios].[none:Anio:ok]</column>
+            <column>[federated.hechosincendios].[none:Region censal:nk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='worksheet'>
+            <format attr='display-field-labels' scope='rows' value='false' />
+            <format attr='display-field-labels' scope='cols' value='false' />
+          </style-rule>
+          <style-rule element='pane'>
+            <format attr='background-color' value='#FFFFFF' />
+          </style-rule>
+          <style-rule element='axis'>
+            <format attr='color' value='#7A6A60' />
+          </style-rule>
+          <style-rule element='header'>
+            <format attr='color' value='#4A3B33' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Bar' />
+            <encodings>
+              <color column="[federated.hechosincendios].[none:Clase de tamano:nk]" />
+            </encodings>
+          </pane>
+        </panes>
+        <rows>[federated.hechosincendios].[none:Clase de tamano:nk]</rows>
+        <cols>[federated.hechosincendios].[sum:Acres:qk]</cols>
+      </table>
+      <simple-id uuid='{773CB87B-7962-5CFD-938B-A5DAF406A6B8}' />
+    </worksheet>
+    <worksheet name="Causas del fuego">
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run fontcolor='#4A3B33' fontsize='11'>Las trece causas estadisticas del NWCG</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption="Hechos incendios" name='federated.hechosincendios' />
+          </datasources>
+          <datasource-dependencies datasource='federated.hechosincendios'>
+            <column datatype='string' name="[Causa]" role='dimension' type='nominal' />
+            <column datatype='integer' name="[Anio]" role='dimension' type='ordinal' />
+            <column datatype='string' name="[Region censal]" role='dimension' type='nominal' />
+            <column datatype='integer' name="[N incendios]" role='measure' type='quantitative' />
+            <column-instance column="[Causa]" derivation='None' name="[none:Causa:nk]" pivot='key' type='nominal' />
+            <column-instance column="[Anio]" derivation='None' name="[none:Anio:ok]" pivot='key' type='ordinal' />
+            <column-instance column="[Region censal]" derivation='None' name="[none:Region censal:nk]" pivot='key' type='nominal' />
+            <column-instance column="[N incendios]" derivation='Sum' name="[sum:N incendios:qk]" pivot='key' type='quantitative' />
+            <column caption="Origen del fuego" datatype='string' name='[OrigenFuego]' role='dimension' type='nominal'>
+              <calculation class='tableau' formula="[Origen del fuego]" scope-isolation='false' />
+            </column>
+            <column-instance column='[OrigenFuego]' derivation='None' name="[none:OrigenFuego:nk]" pivot='key' type='nominal' />
+          </datasource-dependencies>
+          <filter class='categorical' column="[federated.hechosincendios].[none:Anio:ok]" filter-group='100'>
+            <groupfilter function='level-members' level="[none:Anio:ok]" user:ui-enumeration='all' user:ui-marker='enumerate' />
+          </filter>
+          <filter class='categorical' column="[federated.hechosincendios].[none:Region censal:nk]" filter-group='101'>
+            <groupfilter function='level-members' level="[none:Region censal:nk]" user:ui-enumeration='all' user:ui-marker='enumerate' />
+          </filter>
+          <computed-sort column="[federated.hechosincendios].[none:Causa:nk]" direction='DESC' using="[federated.hechosincendios].[sum:N incendios:qk]" />
+          <slices>
+            <column>[federated.hechosincendios].[none:Anio:ok]</column>
+            <column>[federated.hechosincendios].[none:Region censal:nk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='worksheet'>
+            <format attr='display-field-labels' scope='rows' value='false' />
+            <format attr='display-field-labels' scope='cols' value='false' />
+          </style-rule>
+          <style-rule element='pane'>
+            <format attr='background-color' value='#FFFFFF' />
+          </style-rule>
+          <style-rule element='axis'>
+            <format attr='color' value='#7A6A60' />
+          </style-rule>
+          <style-rule element='header'>
+            <format attr='color' value='#4A3B33' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Bar' />
+            <encodings>
+              <color column="[federated.hechosincendios].[none:OrigenFuego:nk]" />
+            </encodings>
+          </pane>
+        </panes>
+        <rows>[federated.hechosincendios].[none:Causa:nk]</rows>
+        <cols>[federated.hechosincendios].[sum:N incendios:qk]</cols>
+      </table>
+      <simple-id uuid='{16B775BF-93A8-5CA0-9C01-151BDEA42AB7}' />
+    </worksheet>
+    <worksheet name="Sector de propiedad">
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run fontcolor='#4A3B33' fontsize='11'>Superficie quemada por tenencia de la tierra</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption="Hechos incendios" name='federated.hechosincendios' />
+          </datasources>
+          <datasource-dependencies datasource='federated.hechosincendios'>
+            <column datatype='string' name="[Sector de propiedad]" role='dimension' type='nominal' />
+            <column datatype='integer' name="[Anio]" role='dimension' type='ordinal' />
+            <column datatype='string' name="[Region censal]" role='dimension' type='nominal' />
+            <column datatype='real' name="[Acres]" role='measure' type='quantitative' />
+            <column-instance column="[Sector de propiedad]" derivation='None' name="[none:Sector de propiedad:nk]" pivot='key' type='nominal' />
+            <column-instance column="[Anio]" derivation='None' name="[none:Anio:ok]" pivot='key' type='ordinal' />
+            <column-instance column="[Region censal]" derivation='None' name="[none:Region censal:nk]" pivot='key' type='nominal' />
+            <column-instance column="[Acres]" derivation='Sum' name="[sum:Acres:qk]" pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='categorical' column="[federated.hechosincendios].[none:Anio:ok]" filter-group='100'>
+            <groupfilter function='level-members' level="[none:Anio:ok]" user:ui-enumeration='all' user:ui-marker='enumerate' />
+          </filter>
+          <filter class='categorical' column="[federated.hechosincendios].[none:Region censal:nk]" filter-group='101'>
+            <groupfilter function='level-members' level="[none:Region censal:nk]" user:ui-enumeration='all' user:ui-marker='enumerate' />
+          </filter>
+          <computed-sort column="[federated.hechosincendios].[none:Sector de propiedad:nk]" direction='DESC' using="[federated.hechosincendios].[sum:Acres:qk]" />
+          <slices>
+            <column>[federated.hechosincendios].[none:Anio:ok]</column>
+            <column>[federated.hechosincendios].[none:Region censal:nk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='worksheet'>
+            <format attr='display-field-labels' scope='rows' value='false' />
+            <format attr='display-field-labels' scope='cols' value='false' />
+          </style-rule>
+          <style-rule element='pane'>
+            <format attr='background-color' value='#FFFFFF' />
+          </style-rule>
+          <style-rule element='axis'>
+            <format attr='color' value='#7A6A60' />
+          </style-rule>
+          <style-rule element='header'>
+            <format attr='color' value='#4A3B33' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Bar' />
+          </pane>
+        </panes>
+        <rows>[federated.hechosincendios].[none:Sector de propiedad:nk]</rows>
+        <cols>[federated.hechosincendios].[sum:Acres:qk]</cols>
+      </table>
+      <simple-id uuid='{EFCFD820-D3A9-53CA-A0AB-FDDC8D18B22A}' />
+    </worksheet>
+    <worksheet name="Ranking de estados">
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run fontcolor='#4A3B33' fontsize='11'>Estados por superficie quemada</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption="Hechos incendios" name='federated.hechosincendios' />
+          </datasources>
+          <datasource-dependencies datasource='federated.hechosincendios'>
+            <column datatype='string' name="[Estado]" role='dimension' type='nominal' />
+            <column datatype='string' name="[Region censal]" role='dimension' type='nominal' />
+            <column datatype='integer' name="[Anio]" role='dimension' type='ordinal' />
+            <column datatype='real' name="[Acres]" role='measure' type='quantitative' />
+            <column-instance column="[Estado]" derivation='None' name="[none:Estado:nk]" pivot='key' type='nominal' />
+            <column-instance column="[Region censal]" derivation='None' name="[none:Region censal:nk]" pivot='key' type='nominal' />
+            <column-instance column="[Anio]" derivation='None' name="[none:Anio:ok]" pivot='key' type='ordinal' />
+            <column-instance column="[Acres]" derivation='Sum' name="[sum:Acres:qk]" pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='categorical' column="[federated.hechosincendios].[none:Anio:ok]" filter-group='100'>
+            <groupfilter function='level-members' level="[none:Anio:ok]" user:ui-enumeration='all' user:ui-marker='enumerate' />
+          </filter>
+          <computed-sort column="[federated.hechosincendios].[none:Estado:nk]" direction='DESC' using="[federated.hechosincendios].[sum:Acres:qk]" />
+          <slices>
+            <column>[federated.hechosincendios].[none:Anio:ok]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='worksheet'>
+            <format attr='display-field-labels' scope='rows' value='false' />
+            <format attr='display-field-labels' scope='cols' value='false' />
+          </style-rule>
+          <style-rule element='pane'>
+            <format attr='background-color' value='#FFFFFF' />
+          </style-rule>
+          <style-rule element='axis'>
+            <format attr='color' value='#7A6A60' />
+          </style-rule>
+          <style-rule element='header'>
+            <format attr='color' value='#4A3B33' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Bar' />
+            <encodings>
+              <color column="[federated.hechosincendios].[none:Region censal:nk]" />
+            </encodings>
+          </pane>
+        </panes>
+        <rows>[federated.hechosincendios].[none:Estado:nk]</rows>
+        <cols>[federated.hechosincendios].[sum:Acres:qk]</cols>
+      </table>
+      <simple-id uuid='{E33B1059-B1B0-5A41-A36A-240A3F18E566}' />
+    </worksheet>
+    <worksheet name="Serie anual por origen">
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run fontcolor='#4A3B33' fontsize='11'>Evolucion anual del numero de incendios</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption="Hechos incendios" name='federated.hechosincendios' />
+          </datasources>
+          <datasource-dependencies datasource='federated.hechosincendios'>
+            <column datatype='integer' name="[Anio]" role='dimension' type='ordinal' />
+            <column datatype='string' name="[Region censal]" role='dimension' type='nominal' />
+            <column datatype='integer' name="[N incendios]" role='measure' type='quantitative' />
+            <column-instance column="[Anio]" derivation='None' name="[none:Anio:ok]" pivot='key' type='ordinal' />
+            <column-instance column="[Region censal]" derivation='None' name="[none:Region censal:nk]" pivot='key' type='nominal' />
+            <column-instance column="[N incendios]" derivation='Sum' name="[sum:N incendios:qk]" pivot='key' type='quantitative' />
+            <column caption="Origen del fuego" datatype='string' name='[OrigenFuego]' role='dimension' type='nominal'>
+              <calculation class='tableau' formula="[Origen del fuego]" scope-isolation='false' />
+            </column>
+            <column-instance column='[OrigenFuego]' derivation='None' name="[none:OrigenFuego:nk]" pivot='key' type='nominal' />
+          </datasource-dependencies>
+          <filter class='categorical' column="[federated.hechosincendios].[none:Region censal:nk]" filter-group='100'>
+            <groupfilter function='level-members' level="[none:Region censal:nk]" user:ui-enumeration='all' user:ui-marker='enumerate' />
+          </filter>
+          <slices>
+            <column>[federated.hechosincendios].[none:Region censal:nk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='worksheet'>
+            <format attr='display-field-labels' scope='rows' value='false' />
+            <format attr='display-field-labels' scope='cols' value='false' />
+          </style-rule>
+          <style-rule element='pane'>
+            <format attr='background-color' value='#FFFFFF' />
+          </style-rule>
+          <style-rule element='axis'>
+            <format attr='color' value='#7A6A60' />
+          </style-rule>
+          <style-rule element='header'>
+            <format attr='color' value='#4A3B33' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Line' />
+            <encodings>
+              <color column="[federated.hechosincendios].[none:OrigenFuego:nk]" />
+            </encodings>
+          </pane>
+        </panes>
+        <rows>[federated.hechosincendios].[sum:N incendios:qk]</rows>
+        <cols>[federated.hechosincendios].[none:Anio:ok]</cols>
+      </table>
+      <simple-id uuid='{2994930D-B624-539F-98B3-6D528E549A8B}' />
+    </worksheet>
+    <worksheet name="Region censal por origen">
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run fontcolor='#4A3B33' fontsize='11'>Incendios por region censal y origen</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption="Hechos incendios" name='federated.hechosincendios' />
+          </datasources>
+          <datasource-dependencies datasource='federated.hechosincendios'>
+            <column datatype='string' name="[Region censal]" role='dimension' type='nominal' />
+            <column datatype='integer' name="[Anio]" role='dimension' type='ordinal' />
+            <column datatype='integer' name="[N incendios]" role='measure' type='quantitative' />
+            <column-instance column="[Region censal]" derivation='None' name="[none:Region censal:nk]" pivot='key' type='nominal' />
+            <column-instance column="[Anio]" derivation='None' name="[none:Anio:ok]" pivot='key' type='ordinal' />
+            <column-instance column="[N incendios]" derivation='Sum' name="[sum:N incendios:qk]" pivot='key' type='quantitative' />
+            <column caption="Origen del fuego" datatype='string' name='[OrigenFuego]' role='dimension' type='nominal'>
+              <calculation class='tableau' formula="[Origen del fuego]" scope-isolation='false' />
+            </column>
+            <column-instance column='[OrigenFuego]' derivation='None' name="[none:OrigenFuego:nk]" pivot='key' type='nominal' />
+          </datasource-dependencies>
+          <filter class='categorical' column="[federated.hechosincendios].[none:Anio:ok]" filter-group='100'>
+            <groupfilter function='level-members' level="[none:Anio:ok]" user:ui-enumeration='all' user:ui-marker='enumerate' />
+          </filter>
+          <slices>
+            <column>[federated.hechosincendios].[none:Anio:ok]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='worksheet'>
+            <format attr='display-field-labels' scope='rows' value='false' />
+            <format attr='display-field-labels' scope='cols' value='false' />
+          </style-rule>
+          <style-rule element='pane'>
+            <format attr='background-color' value='#FFFFFF' />
+          </style-rule>
+          <style-rule element='axis'>
+            <format attr='color' value='#7A6A60' />
+          </style-rule>
+          <style-rule element='header'>
+            <format attr='color' value='#4A3B33' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Bar' />
+            <encodings>
+              <color column="[federated.hechosincendios].[none:OrigenFuego:nk]" />
+            </encodings>
+          </pane>
+        </panes>
+        <rows>[federated.hechosincendios].[sum:N incendios:qk]</rows>
+        <cols>[federated.hechosincendios].[none:Region censal:nk]</cols>
+      </table>
+      <simple-id uuid='{FD140E7E-9A40-5220-9C38-09FE83891606}' />
+    </worksheet>
+    <worksheet name="Mapa de focos">
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run fontcolor='#4A3B33' fontsize='11'>Muestra de 40.000 incendios geo-referenciados</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption="Focos muestra" name='federated.focosmuestra' />
+          </datasources>
+          <datasource-dependencies datasource='federated.focosmuestra'>
+            <column datatype='real' name='[Latitud]' role='measure' semantic-role='[Latitude]' type='quantitative' />
+            <column-instance column='[Latitud]' derivation='Avg' name='[avg:Latitud:qk]' pivot='key' type='quantitative' />
+            <column datatype='real' name='[Longitud]' role='measure' semantic-role='[Longitude]' type='quantitative' />
+            <column-instance column='[Longitud]' derivation='Avg' name='[avg:Longitud:qk]' pivot='key' type='quantitative' />
+            <column datatype='integer' name="[Id foco]" role='dimension' type='ordinal' />
+            <column datatype='integer' name="[Anio]" role='dimension' type='ordinal' />
+            <column-instance column="[Id foco]" derivation='None' name="[none:Id foco:ok]" pivot='key' type='ordinal' />
+            <column-instance column="[Anio]" derivation='None' name="[none:Anio:ok]" pivot='key' type='ordinal' />
+            <column caption="Origen del fuego" datatype='string' name='[OrigenFuego]' role='dimension' type='nominal'>
+              <calculation class='tableau' formula="[Origen del fuego]" scope-isolation='false' />
+            </column>
+            <column-instance column='[OrigenFuego]' derivation='None' name="[none:OrigenFuego:nk]" pivot='key' type='nominal' />
+          </datasource-dependencies>
+          <filter class='categorical' column="[federated.focosmuestra].[none:Anio:ok]" filter-group='100'>
+            <groupfilter function='level-members' level="[none:Anio:ok]" user:ui-enumeration='all' user:ui-marker='enumerate' />
+          </filter>
+          <slices>
+            <column>[federated.focosmuestra].[none:Anio:ok]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='worksheet'>
+            <format attr='display-field-labels' scope='rows' value='false' />
+            <format attr='display-field-labels' scope='cols' value='false' />
+          </style-rule>
+          <style-rule element='pane'>
+            <format attr='background-color' value='#FFFFFF' />
+          </style-rule>
+          <style-rule element='axis'>
+            <format attr='color' value='#7A6A60' />
+          </style-rule>
+          <style-rule element='header'>
+            <format attr='color' value='#4A3B33' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Circle' />
+            <encodings>
+              <color column="[federated.focosmuestra].[none:OrigenFuego:nk]" />
+              <lod column="[federated.focosmuestra].[none:Id foco:ok]" />
+            </encodings>
+          </pane>
+        </panes>
+        <rows>[federated.focosmuestra].[avg:Latitud:qk]</rows>
+        <cols>[federated.focosmuestra].[avg:Longitud:qk]</cols>
+      </table>
+      <simple-id uuid='{79DFCA9B-E60D-5CE2-B142-6A3205904977}' />
+    </worksheet>
+  </worksheets>
+  <dashboards>
+    <dashboard name="1. Panorama del origen">
+      <style>
+        <style-rule element='dash-container'>
+          <format attr='background-color' id='dash-zone_1' value='#F7F4F1' />
+        </style-rule>
+      </style>
+      <size maxheight='900' maxwidth='1500' minheight='900' minwidth='1500' />
+      <zones>
+        <zone h='100000' id='1' type-v2='layout-basic' w='100000' x='0' y='0'>
+        <zone h='6500' id='2' type-v2='text' w='100000' x='0' y='0'>
+          <formatted-text>
+            <run fontcolor='#241C18' fontsize='18' bold='true'>Origen del fuego en Estados Unidos, 1992-2015</run>
+          </formatted-text>
+          <zone-style>
+            <format attr='background-color' value='#F7F4F1' />
+            <format attr='border-style' value='none' />
+            <format attr='border-width' value='0' />
+            <format attr='margin' value='4' />
+          </zone-style>
+        </zone>
+        <zone h='4500' id='3' type-v2='text' w='100000' x='0' y='6500'>
+          <formatted-text>
+            <run fontcolor='#7A6A60' fontsize='11'>1.880.465 incendios geo-referenciados  ·  140,1 millones de acres quemados</run>
+          </formatted-text>
+          <zone-style>
+            <format attr='background-color' value='#F7F4F1' />
+            <format attr='border-style' value='none' />
+            <format attr='border-width' value='0' />
+            <format attr='margin' value='4' />
+          </zone-style>
+        </zone>
+        <zone h='44500' id='4' name="Eventos por origen" w='50000' x='0' y='11000'>
+          <zone-style>
+            <format attr='background-color' value='#FFFFFF' />
+            <format attr='border-color' value='#E0D8D2' />
+            <format attr='border-style' value='solid' />
+            <format attr='border-width' value='1' />
+            <format attr='margin' value='5' />
+          </zone-style>
+        </zone>
+        <zone h='44500' id='5' name="Superficie por origen" w='50000' x='50000' y='11000'>
+          <zone-style>
+            <format attr='background-color' value='#FFFFFF' />
+            <format attr='border-color' value='#E0D8D2' />
+            <format attr='border-style' value='solid' />
+            <format attr='border-width' value='1' />
+            <format attr='margin' value='5' />
+          </zone-style>
+        </zone>
+        <zone h='44500' id='6' name="Estacionalidad por origen" w='50000' x='0' y='55500'>
+          <zone-style>
+            <format attr='background-color' value='#FFFFFF' />
+            <format attr='border-color' value='#E0D8D2' />
+            <format attr='border-style' value='solid' />
+            <format attr='border-width' value='1' />
+            <format attr='margin' value='5' />
+          </zone-style>
+        </zone>
+        <zone h='44500' id='7' name="Severidad media por origen" w='50000' x='50000' y='55500'>
+          <zone-style>
+            <format attr='background-color' value='#FFFFFF' />
+            <format attr='border-color' value='#E0D8D2' />
+            <format attr='border-style' value='solid' />
+            <format attr='border-width' value='1' />
+            <format attr='margin' value='5' />
+          </zone-style>
+        </zone>
+          <zone-style>
+            <format attr='background-color' value='#F7F4F1' />
+            <format attr='border-style' value='none' />
+          </zone-style>
+        </zone>
+      </zones>
+      <simple-id uuid='{3B17029F-ED89-5F52-A1B9-A1EB4D585932}' />
+    </dashboard>
+    <dashboard name="2. Magnitud, causas y propiedad">
+      <style>
+        <style-rule element='dash-container'>
+          <format attr='background-color' id='dash-zone_1' value='#F7F4F1' />
+        </style-rule>
+      </style>
+      <size maxheight='900' maxwidth='1500' minheight='900' minwidth='1500' />
+      <zones>
+        <zone h='100000' id='1' type-v2='layout-basic' w='100000' x='0' y='0'>
+        <zone h='6500' id='2' type-v2='text' w='100000' x='0' y='0'>
+          <formatted-text>
+            <run fontcolor='#241C18' fontsize='18' bold='true'>La superficie se concentra en muy pocos incendios</run>
+          </formatted-text>
+          <zone-style>
+            <format attr='background-color' value='#F7F4F1' />
+            <format attr='border-style' value='none' />
+            <format attr='border-width' value='0' />
+            <format attr='margin' value='4' />
+          </zone-style>
+        </zone>
+        <zone h='4500' id='3' type-v2='text' w='100000' x='0' y='6500'>
+          <formatted-text>
+            <run fontcolor='#7A6A60' fontsize='11'>Clases de tamano NWCG, causas estadisticas y tenencia de la tierra</run>
+          </formatted-text>
+          <zone-style>
+            <format attr='background-color' value='#F7F4F1' />
+            <format attr='border-style' value='none' />
+            <format attr='border-width' value='0' />
+            <format attr='margin' value='4' />
+          </zone-style>
+        </zone>
+        <zone h='44500' id='4' name="Piramide de clases" w='50000' x='0' y='11000'>
+          <zone-style>
+            <format attr='background-color' value='#FFFFFF' />
+            <format attr='border-color' value='#E0D8D2' />
+            <format attr='border-style' value='solid' />
+            <format attr='border-width' value='1' />
+            <format attr='margin' value='5' />
+          </zone-style>
+        </zone>
+        <zone h='44500' id='5' name="Superficie por clase" w='50000' x='50000' y='11000'>
+          <zone-style>
+            <format attr='background-color' value='#FFFFFF' />
+            <format attr='border-color' value='#E0D8D2' />
+            <format attr='border-style' value='solid' />
+            <format attr='border-width' value='1' />
+            <format attr='margin' value='5' />
+          </zone-style>
+        </zone>
+        <zone h='44500' id='6' name="Causas del fuego" w='50000' x='0' y='55500'>
+          <zone-style>
+            <format attr='background-color' value='#FFFFFF' />
+            <format attr='border-color' value='#E0D8D2' />
+            <format attr='border-style' value='solid' />
+            <format attr='border-width' value='1' />
+            <format attr='margin' value='5' />
+          </zone-style>
+        </zone>
+        <zone h='44500' id='7' name="Sector de propiedad" w='50000' x='50000' y='55500'>
+          <zone-style>
+            <format attr='background-color' value='#FFFFFF' />
+            <format attr='border-color' value='#E0D8D2' />
+            <format attr='border-style' value='solid' />
+            <format attr='border-width' value='1' />
+            <format attr='margin' value='5' />
+          </zone-style>
+        </zone>
+          <zone-style>
+            <format attr='background-color' value='#F7F4F1' />
+            <format attr='border-style' value='none' />
+          </zone-style>
+        </zone>
+      </zones>
+      <simple-id uuid='{E72041E8-9EB9-508D-830B-5989C1B79C55}' />
+    </dashboard>
+    <dashboard name="3. Geografia y evolucion">
+      <style>
+        <style-rule element='dash-container'>
+          <format attr='background-color' id='dash-zone_1' value='#F7F4F1' />
+        </style-rule>
+      </style>
+      <size maxheight='900' maxwidth='1500' minheight='900' minwidth='1500' />
+      <zones>
+        <zone h='100000' id='1' type-v2='layout-basic' w='100000' x='0' y='0'>
+        <zone h='6500' id='2' type-v2='text' w='100000' x='0' y='0'>
+          <formatted-text>
+            <run fontcolor='#241C18' fontsize='18' bold='true'>Donde arde y como evoluciona</run>
+          </formatted-text>
+          <zone-style>
+            <format attr='background-color' value='#F7F4F1' />
+            <format attr='border-style' value='none' />
+            <format attr='border-width' value='0' />
+            <format attr='margin' value='4' />
+          </zone-style>
+        </zone>
+        <zone h='4500' id='3' type-v2='text' w='100000' x='0' y='6500'>
+          <formatted-text>
+            <run fontcolor='#7A6A60' fontsize='11'>Los estados con mas incendios no son los que mas superficie pierden</run>
+          </formatted-text>
+          <zone-style>
+            <format attr='background-color' value='#F7F4F1' />
+            <format attr='border-style' value='none' />
+            <format attr='border-width' value='0' />
+            <format attr='margin' value='4' />
+          </zone-style>
+        </zone>
+        <zone h='52000' id='4' name="Mapa de focos" w='60000' x='0' y='11000'>
+          <zone-style>
+            <format attr='background-color' value='#FFFFFF' />
+            <format attr='border-color' value='#E0D8D2' />
+            <format attr='border-style' value='solid' />
+            <format attr='border-width' value='1' />
+            <format attr='margin' value='5' />
+          </zone-style>
+        </zone>
+        <zone h='89000' id='5' name="Ranking de estados" w='40000' x='60000' y='11000'>
+          <zone-style>
+            <format attr='background-color' value='#FFFFFF' />
+            <format attr='border-color' value='#E0D8D2' />
+            <format attr='border-style' value='solid' />
+            <format attr='border-width' value='1' />
+            <format attr='margin' value='5' />
+          </zone-style>
+        </zone>
+        <zone h='37000' id='6' name="Serie anual por origen" w='30000' x='0' y='63000'>
+          <zone-style>
+            <format attr='background-color' value='#FFFFFF' />
+            <format attr='border-color' value='#E0D8D2' />
+            <format attr='border-style' value='solid' />
+            <format attr='border-width' value='1' />
+            <format attr='margin' value='5' />
+          </zone-style>
+        </zone>
+        <zone h='37000' id='7' name="Region censal por origen" w='30000' x='30000' y='63000'>
+          <zone-style>
+            <format attr='background-color' value='#FFFFFF' />
+            <format attr='border-color' value='#E0D8D2' />
+            <format attr='border-style' value='solid' />
+            <format attr='border-width' value='1' />
+            <format attr='margin' value='5' />
+          </zone-style>
+        </zone>
+          <zone-style>
+            <format attr='background-color' value='#F7F4F1' />
+            <format attr='border-style' value='none' />
+          </zone-style>
+        </zone>
+      </zones>
+      <simple-id uuid='{08F17BAC-9C13-5EAE-9291-A3CAA0D9A4DA}' />
+    </dashboard>
+  </dashboards>
+  <windows source-height='30'>
+    <window class='dashboard' maximized='true' name="1. Panorama del origen">
+      <viewpoints>
+        <viewpoint name="Eventos por origen">
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name="Superficie por origen">
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name="Estacionalidad por origen">
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name="Severidad media por origen">
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name="Piramide de clases">
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name="Superficie por clase">
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name="Causas del fuego">
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name="Sector de propiedad">
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name="Ranking de estados">
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name="Serie anual por origen">
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name="Region censal por origen">
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name="Mapa de focos">
+          <zoom type='entire-view' />
+        </viewpoint>
+      </viewpoints>
+      <active id='-1' />
+      <simple-id uuid='{9FBC8912-50D5-5609-9F70-F73DF69FEA38}' />
+    </window>
+    <window class='dashboard' name="2. Magnitud, causas y propiedad">
+      <viewpoints>
+        <viewpoint name="Eventos por origen">
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name="Superficie por origen">
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name="Estacionalidad por origen">
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name="Severidad media por origen">
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name="Piramide de clases">
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name="Superficie por clase">
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name="Causas del fuego">
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name="Sector de propiedad">
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name="Ranking de estados">
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name="Serie anual por origen">
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name="Region censal por origen">
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name="Mapa de focos">
+          <zoom type='entire-view' />
+        </viewpoint>
+      </viewpoints>
+      <active id='-1' />
+      <simple-id uuid='{8CAD1828-6F34-5CC3-A145-1A4C21101FE7}' />
+    </window>
+    <window class='dashboard' name="3. Geografia y evolucion">
+      <viewpoints>
+        <viewpoint name="Eventos por origen">
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name="Superficie por origen">
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name="Estacionalidad por origen">
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name="Severidad media por origen">
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name="Piramide de clases">
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name="Superficie por clase">
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name="Causas del fuego">
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name="Sector de propiedad">
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name="Ranking de estados">
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name="Serie anual por origen">
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name="Region censal por origen">
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name="Mapa de focos">
+          <zoom type='entire-view' />
+        </viewpoint>
+      </viewpoints>
+      <active id='-1' />
+      <simple-id uuid='{FDB658BD-A53B-5E70-838D-C4EFBC83EE25}' />
+    </window>
+    <window class='worksheet' hidden='true' name="Eventos por origen">
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{7B0D42A0-ED6E-5ED7-8780-96D2018A2626}' />
+    </window>
+    <window class='worksheet' hidden='true' name="Superficie por origen">
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{E69D3464-F9D2-5BEB-8D96-04E7FB577BC5}' />
+    </window>
+    <window class='worksheet' hidden='true' name="Estacionalidad por origen">
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{3E31C43D-CB7E-5D04-8445-855118CFEF22}' />
+    </window>
+    <window class='worksheet' hidden='true' name="Severidad media por origen">
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{9ED1D5C4-FE47-504D-B640-49E4ED1D2279}' />
+    </window>
+    <window class='worksheet' hidden='true' name="Piramide de clases">
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{E0B923A3-D452-5B76-B48C-ED72E42B95C2}' />
+    </window>
+    <window class='worksheet' hidden='true' name="Superficie por clase">
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{801033A7-3212-53AE-82A7-90D5BB9E7E23}' />
+    </window>
+    <window class='worksheet' hidden='true' name="Causas del fuego">
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{EB106066-1AB7-5F93-9CA2-6EE5C1415E54}' />
+    </window>
+    <window class='worksheet' hidden='true' name="Sector de propiedad">
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{5D742AD4-8360-5395-B1A6-0FB9BB7CDE77}' />
+    </window>
+    <window class='worksheet' hidden='true' name="Ranking de estados">
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{C7C1F3C4-4321-5438-B0C4-28AB1504A0FB}' />
+    </window>
+    <window class='worksheet' hidden='true' name="Serie anual por origen">
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{EBDF8869-C1DE-5F2A-A35B-656C9284AD61}' />
+    </window>
+    <window class='worksheet' hidden='true' name="Region censal por origen">
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{C6135D37-ABBD-56F1-8FE4-A6C3DBC6CC5D}' />
+    </window>
+    <window class='worksheet' hidden='true' name="Mapa de focos">
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{8970C3AC-5A23-545C-AFE3-ADEA177FFE4F}' />
+    </window>
+  </windows>
+</workbook>
