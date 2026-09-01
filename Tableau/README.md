@@ -24,9 +24,17 @@ lo que el libro contiene, y sirve además para reconstruirlo a mano si hiciera f
 
 ```bash
 cd Tableau
-python generar_extractos.py    # extractos desde el Data Lake, con control de consistencia
+python generar_extractos.py    # extractos CSV desde el Data Lake, con control de consistencia
+python construir_hyper.py      # CSV -> incendios_eeuu.hyper
 python construir_libro.py      # genera Origen_del_Fuego_EEUU_1992_2015.twb
+python empaquetar.py           # genera Origen_del_Fuego_EEUU_1992_2015.twbx, listo para publicar
 ```
+
+> **Por qué hace falta la extracción Hyper.** Tableau Public solo publica libros
+> cuyas fuentes de datos sean extracciones. Un libro conectado en vivo a los CSV se
+> abre sin problema en Tableau Desktop, pero al guardarlo en Tableau Public devuelve
+> *«Los libros de trabajo guardados en Tableau Public deben usar extracciones»*. Por eso
+> las fuentes apuntan a `Data/incendios_eeuu.hyper` dentro del paquete `.twbx`.
 
 ---
 

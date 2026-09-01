@@ -98,13 +98,25 @@ TINTA_3   = "#7A6A60"
 
 COLOR_ORIGEN = {"Antropico": NARANJA, "Natural": AZUL, "No determinado": GRIS}
 
-DS, CX = "federated.hechosincendios", "textscan.hechosincendios"
-DSF, CXF = "federated.focosmuestra", "textscan.focosmuestra"
+DS, CX = "federated.hechosincendios", "hyper.hechosincendios"
+DSF, CXF = "federated.focosmuestra", "hyper.focosmuestra"
 
 # Campos numericos que son codigos y no cantidades: deben ser dimension.
 DIMENSIONES_NUMERICAS = {"Anio", "Mes", "Orden de clase", "Id foco"}
 
-TIPO_REMOTO = {"integer": "20", "real": "5", "string": "129"}
+# Extraccion Hyper: Tableau Public solo publica libros basados en extracciones.
+HYPER = "incendios_eeuu.hyper"
+
+# Una tabla de la extraccion por cada extracto CSV.
+TABLAS_HYPER = {
+    "Hechos": "hechos_incendios.csv",
+    "Focos": "focos_muestra.csv",
+    "Resumen": "resumen_origen.csv",
+}
+TABLA_DE_CSV = {csv: tabla for tabla, csv in TABLAS_HYPER.items()}
+
+# Codigos de tipo remoto del conector Hyper.
+TIPO_REMOTO = {"integer": "20", "real": "5", "string": "130"}
 
 
 def a(v):
@@ -197,29 +209,34 @@ INST_ORIGEN = "[none:OrigenFuego:nk]"
 
 def bloque_datasource(archivo, ds, cx, caption, calculados=(), paleta=None,
                       semantica=None, dims_calc=()):
-    """Fuente de datos sobre un archivo de texto plano (conector `textscan`)."""
+    """Fuente de datos sobre una tabla de la extraccion Hyper.
+
+    Tableau Public SOLO publica libros cuyas fuentes sean extracciones: una
+    conexion en vivo a los CSV se abre en Tableau Desktop pero es rechazada al
+    guardar en Tableau Public. Por eso la conexion es de clase `hyper` y apunta
+    a `Data/<archivo>.hyper`, que es la ruta dentro del paquete .twbx.
+
+    El esquema se sigue deduciendo del CSV de origen, de modo que el libro y la
+    extraccion no puedan divergir: ambos salen del mismo archivo.
+    """
     cols = inferir(os.path.join(EXTRACTOS, archivo))
-    tabla = archivo.replace(".csv", "") + "#csv"
+    tabla = TABLA_DE_CSV[archivo]
 
     o = [f"  <datasource caption={a(caption)} inline='true' name='{ds}' version='18.1'>",
          "    <connection class='federated'>",
          "      <named-connections>",
          f"        <named-connection caption={a(caption)} name='{cx}'>",
-         "          <connection auto-extract='no' character-set='UTF-8' class='textscan' "
-         "directory='extractos' driver='' "
-         f"filename={a(archivo)} force-character-set='no' force-header='no' "
-         "force-separator='no' header='yes' separator=',' text-qualifier='&quot;' />",
+         f"          <connection class='hyper' dbname='Data/{HYPER}' schema='Extract' "
+         "server='' username='tableau_internal_user' />",
          "        </named-connection>",
          "      </named-connections>",
-         f"      <relation connection='{cx}' name='{tabla}' table='[{tabla}]' type='table'>",
-         "        <columns character-set='UTF-8' header='yes' locale='en_US' separator=',' "
-         "text-qualifier='&quot;'>"]
+         f"      <relation connection='{cx}' name='{tabla}' "
+         f"table='[Extract].[{tabla}]' type='table'>",
+         "        <columns header='yes' outcome='6'>"]
     for c in cols:
         o.append(f"          <column datatype='{c['t']}' name={a(c['n'])} "
                  f"ordinal='{c['orden']}' />")
-    o += ["        </columns>", "      </relation>",
-          "      <refresh increment-key='' incremental-updates='false' />",
-          "      <metadata-records>"]
+    o += ["        </columns>", "      </relation>", "      <metadata-records>"]
     for c in cols:
         o += ["        <metadata-record class='column'>",
               f"          <remote-name>{escape(c['n'])}</remote-name>",
@@ -233,6 +250,7 @@ def bloque_datasource(archivo, ds, cx, caption, calculados=(), paleta=None,
               "          <contains-null>true</contains-null>",
               "        </metadata-record>"]
     o += ["      </metadata-records>", "    </connection>", "    <aliases enabled='yes' />"]
+
     semantica = semantica or {}
     for c in cols:
         # El rol geografico permite que Tableau dibuje un mapa real en lugar de

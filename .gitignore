@@ -33,3 +33,7 @@ venv/
 # Archivos temporales de recuperacion que Tableau deja junto al libro.
 *.twbr
 .~*
+
+# La extraccion Hyper se reconstruye con Tableau/construir_hyper.py y
+# ademas viaja dentro del .twbx, asi que no se versiona por separado.
+*.hyper
