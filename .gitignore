@@ -28,3 +28,8 @@ venv/
 # --- Salidas temporales ----------------------------------------------------
 *.log
 .ipynb_checkpoints/
+
+# --- Tableau -------------------------------------------------------------
+# Archivos temporales de recuperacion que Tableau deja junto al libro.
+*.twbr
+.~*
